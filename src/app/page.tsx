@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -46,7 +45,6 @@ export default function Home() {
           target="_blank"
         >
           <h2>Generative AI Adoption Plans</h2>
-          <p>We provide plans for adopting generative AI in your business...</p>
         </a>
 
         <a
@@ -55,7 +53,6 @@ export default function Home() {
           target="_blank"
         >
           <h2>Business Consulting</h2>
-          <p>We offer consulting services to help your business grow...</p>
         </a>
 
         <a
@@ -64,7 +61,6 @@ export default function Home() {
           target="_blank"
         >
           <h2>Modern Customized Solutions</h2>
-          <p>We provide modern solutions tailored to your business needs...</p>
         </a>
 
         <a
@@ -73,7 +69,6 @@ export default function Home() {
           target="_blank"
         >
           <h2>Team Training</h2>
-          <p>We offer training for your team on maintaining project collaboration...</p>
         </a>
       </div>
     </main>
