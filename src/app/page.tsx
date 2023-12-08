@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-5 lg:text-left">
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services/generative-ai-adoption`} // replace with your first service link
+          href="/services/generative-ai-adoption" // replace with your first service link
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
         >
@@ -48,7 +48,7 @@ export default function Home() {
         </a>
 
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services/business-consulting`} // replace with your second service link
+          href="/services/business-consulting" // replace with your second service link
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
         >
@@ -56,7 +56,7 @@ export default function Home() {
         </a>
 
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services/modern-customized-solutions`} // replace with your third service link
+          href="/services/modern-customized-solutions" // replace with your third service link
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
         >
@@ -64,14 +64,14 @@ export default function Home() {
         </a>
 
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services/team-training`} // replace with your fourth service link
+          href="/services/team-training" // replace with your fourth service link
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
         >
           <h2>Team Training</h2>
         </a>
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_URL}/services/meet-the-team`} // replace with your fifth service link
+          href="/services/meet-the-team" // replace with your fifth service link
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
         >
