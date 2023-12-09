@@ -2,82 +2,82 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-blue-400">
+    <main className="flex flex-col items-center justify-center min-h-screen p-6">
+      <header className="w-full max-w-5xl px-6 py-4 text-center">
+        <p className="text-blue-400 bg-gradient-to-b from-zinc-200 to-transparent border-b border-gray-300 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-center">
           &gt; Welcome to the Web Rodents Nest
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://nest.webrodent.com" // replace with your website link
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/webrodent_logo_stripped.svg" // replace with your logo image path
-              alt="WebRodent Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+      </header>
+
+      <div className="z-10 flex flex-col items-center justify-center flex-grow w-full max-w-5xl px-6">
+        <div className="relative flex justify-center items-center w-full">
+          <div className="absolute inset-0 flex justify-center items-center">
+            <div className="h-[300px] w-[680px] rounded-full bg-gradient-radial from-white to-transparent blur-2xl dark:from-transparent dark:to-blue-700 dark:opacity-10 z-[-1]" />
+            <div className="h-[180px] w-[440px] bg-gradient-conic from-sky-200 via-blue-200 to-transparent blur-2xl dark:from-sky-900 dark:via-[#0141ff] dark:opacity-40 z-[-1]" />
+          </div>
+          <Image
+            src="/webrodent_logo_3.svg" // replace with your logo image path
+            alt="WebRodent Logo"
+            width={680}
+            height={537}
+            priority
+            className="relative z-10 dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+          />
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[680px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-40 after:h-[180px] after:w-[440px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/webrodent_logo_3.svg"
-          alt="Next.js Logo"
-          width={680}
-          height={537}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-5 lg:text-left">
+      <nav className="w-full max-w-5xl px-6 py-4 mb-32 grid grid-cols-1 gap-4 text-center lg:grid-cols-5 lg:mb-0">
         <a
-          href="/services/generative-ai-adoption" // replace with your first service link
+          href="/services/generative-ai-adoption"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>Generative AI Adoption Plans</h2>
         </a>
-
         <a
-          href="/services/business-consulting" // replace with your second service link
+          href="/services/modern-customized-solutions"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
-        >
-          <h2>Business Consulting</h2>
-        </a>
-
-        <a
-          href="/services/modern-customized-solutions" // replace with your third service link
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>Modern Customized Solutions</h2>
         </a>
-
         <a
-          href="/services/team-training" // replace with your fourth service link
+          href="/services/team-training"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>Team Training</h2>
         </a>
         <a
-          href="/services/meet-the-team" // replace with your fifth service link
+          href="/services/meet-the-team"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <h2>Meet the Rodents</h2>
         </a>
-      </div>
+      </nav>
+
+      <footer className="w-full max-w-5xl px-6 py-4 text-center">
+        <a
+          href="https://nest.webrodent.com"
+          className="flex items-center justify-center gap-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          By{' '}
+          <Image
+            src="/webrodent_logo_stripped.svg"
+            alt="WebRodent Logo"
+            width={100}
+            height={24}
+            priority
+          />
+        </a>
+      </footer>
     </main>
   )
 }
