@@ -25,7 +25,7 @@ export default function Home() {
     <div className="z-10 flex flex-col items-center justify-center flex-grow w-full max-w-5xl px-6">
       <div className="relative flex justify-center items-center w-full">
         <div className="absolute inset-0 flex justify-center items-center">
-          <div className="h-[437px] w-[680px] rounded-full bg-gradient-radial from-blue-600 to-transparent blur-2xl opacity-10"/>
+          <div className="h-[337px] w-[680px] rounded-full bg-gradient-radial from-blue-600 to-transparent blur-2xl opacity-10"/>
         </div>
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -43,18 +43,14 @@ export default function Home() {
       </div>
     </div>
 
-      <nav className="w-full max-w-5xl px-6 py-4 mb-32 grid grid-cols-1 gap-4 text-center lg:grid-cols-3 lg:mb-0">
+      <nav className="w-full max-w-5xl px-6 py-4 grid grid-cols-1 gap-4 text-center lg:grid-cols-3 lg:mb-0">
         <a
           href="/services/generative-ai-adoption"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:border-neutral-700 hover:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <motion.div
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <h2>Generative AI Adoption Plans</h2></motion.div>
+          <h2>Generative AI Adoption Plans</h2>
         </a>
         <a
           href="/services/modern-customized-solutions"
@@ -62,11 +58,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <motion.div
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <h2>Modern Customized Solutions</h2></motion.div>
+          <h2>Modern Customized Solutions</h2>
         </a>
         <a
           href="/services/meet-the-team"
@@ -74,11 +66,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <motion.div
-          whileHover={{ scale: 1.03 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <h2>Meet the Rodents</h2></motion.div>
+          <h2>Meet the Rodents</h2>
         </a>
       </nav>
 
