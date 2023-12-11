@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </div>
 
-      <nav className="w-full max-w-5xl px-6 py-4 mb-32 grid grid-cols-1 gap-4 text-center lg:grid-cols-4 lg:mb-0">
+      <nav className="w-full max-w-5xl px-6 py-4 mb-32 grid grid-cols-1 gap-4 text-center lg:grid-cols-3 lg:mb-0">
         <a
           href="/services/generative-ai-adoption"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:border-neutral-700 hover:bg-neutral-800/30"
@@ -77,14 +77,6 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2>Modern Customized Solutions</h2>
-        </a>
-        <a
-          href="/services/team-training"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:border-neutral-700 hover:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>Team Training</h2>
         </a>
         <a
           href="/services/meet-the-team"
