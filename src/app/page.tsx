@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import MainFooter from '../lib/components/footers';
 import useMobileDetect from '../lib/mobileDetect';
 import useTextAnimation from '../lib/textAnimation';
 
@@ -22,8 +23,7 @@ export default function Home() {
       <div className="z-10 flex flex-col items-center justify-center flex-grow w-full max-w-5xl px-6">
         <div className="relative flex justify-center items-center w-full">
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="h-[300px] w-[680px] rounded-full bg-gradient-radial from-white to-transparent blur-2xl from-transparent to-blue-700 opacity-10 z-[-1]" />
-            <div className="h-[180px] w-[440px] bg-gradient-conic from-sky-200 via-blue-200 to-transparent blur-2xl from-sky-900 via-[#0141ff] opacity-40 z-[-1]" />
+            <div className="h-[437px] w-[680px] rounded-full bg-gradient-radial from-white to-transparent blur-2xl from-transparent to-blue-700 opacity-20 z-[-1]" />
           </div>
           <Image
             src="/webrodent_logo_3.svg" // replace with your logo image path
@@ -63,24 +63,7 @@ export default function Home() {
         </a>
       </nav>
 
-      <footer className="w-full max-w-5xl px-6 py-4 text-center">
-        <a
-          href="https://nest.webrodent.com"
-          className="flex items-center justify-center gap-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          By{' '}
-          <Image
-            src="/webrodent_logo_stripped.svg"
-            alt="WebRodent Logo"
-            width={100}
-            height={24}
-            priority
-            className="relative z-10 drop-shadow-[0_0_0.3rem_#ffffff70] invert"
-          />
-        </a>
-      </footer>
+      <MainFooter />
     </main>
   )
 }
