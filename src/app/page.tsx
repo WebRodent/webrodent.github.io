@@ -23,7 +23,7 @@ export default function Home() {
       <div className="z-10 flex flex-col items-center justify-center flex-grow w-full max-w-5xl px-6">
         <div className="relative flex justify-center items-center w-full">
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="h-[437px] w-[680px] rounded-full bg-gradient-radial from-blue-500 to-transparent blur-2xl from-transparent to-blue-700 opacity-20 z-[-1]" />
+            <div className="h-[437px] w-[680px] rounded-full bg-gradient-radial from-blue-600 to-transparent blur-2xl from-transparent to-blue-700 opacity-20 z-[-1]" />
           </div>
           <Image
             src="/webrodent_logo_3.svg" // replace with your logo image path
