@@ -5,7 +5,7 @@ import useTextAnimation from '../../lib/textAnimation';
 
 export default function GenerativeAIAdoption() {
     const isMobile = useMobileDetect();
-    const textRef = useTextAnimation(isMobile);
+    const textRef = useTextAnimation(isMobile, "Meet the Team!");
 
     return (
         <main className="flex flex-col items-center justify-top min-h-screen p-6">

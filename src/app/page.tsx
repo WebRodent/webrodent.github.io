@@ -6,7 +6,7 @@ import useTextAnimation from '../lib/textAnimation';
 
 export default function Home() {
   const isMobile = useMobileDetect();
-  const textRef = useTextAnimation(isMobile);
+  const textRef = useTextAnimation(isMobile, " Welcome to the WebRodent Nest!");
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6">

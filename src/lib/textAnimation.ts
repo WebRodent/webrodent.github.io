@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react';
 
-export default function useTextAnimation(isMobile: boolean) {
+export default function useTextAnimation(isMobile: boolean, text: string) {
   const textRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
     if (!isMobile) {
-      const text = "Welcome to the Web Rodent Nest";
       let i = 0;
       const intervalId = setInterval(() => {
         if (textRef.current) {
@@ -23,7 +22,7 @@ export default function useTextAnimation(isMobile: boolean) {
 
       return () => clearInterval(intervalId); // cleanup on unmount
     }
-  }, [isMobile]);
+  }, [isMobile, text]);
 
   return textRef;
 }
