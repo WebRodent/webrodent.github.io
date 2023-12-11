@@ -25,7 +25,7 @@ export function MainFooter() {
 
 export function SocialFooter() {
     return (
-        <footer className="flex flex-col items-center justify-center w-full max-w-5xl px-6 py-4 text-center mt-auto">
+        <footer className="flex items-center justify-center w-full max-w-5xl px-6 py-4 mb-32 grid grid-cols-1 gap-4 text-center lg:grid-cols- lg:mb-0">
             <div className="flex items-center justify-center gap-2">
                 <a
                 href="https://github.com/WebRodent"
@@ -44,7 +44,7 @@ export function SocialFooter() {
                 </a>
                 <a
                 href="https://www.linkedin.com/company/webrodent"
-                className="flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-3"
                 target="_blank"
                 rel="noopener noreferrer"
                 >

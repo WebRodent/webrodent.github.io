@@ -2,8 +2,8 @@ import Image from 'next/image'
 import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
-import ContentCard from '../../lib/components/content';
-import {MainFooter, SocialFooter} from '../../lib/components/footers';
+import ContentCard from '../../components/content';
+import {MainFooter, SocialFooter} from '../../components/footers';
 
 export default function GenerativeAIAdoption() {
     const isMobile = useMobileDetect();

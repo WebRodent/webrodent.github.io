@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import {MainFooter, SocialFooter} from '../lib/components/footers';
+import {MainFooter, SocialFooter} from '../components/footers';
 import useMobileDetect from '../lib/mobileDetect';
 import useTextAnimation from '../lib/textAnimation';
 
