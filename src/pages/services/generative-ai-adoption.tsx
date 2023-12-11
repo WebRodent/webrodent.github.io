@@ -8,13 +8,13 @@ type ContentCardProps = {
     content: string;
   };
   
-  const ContentCard: React.FC<ContentCardProps> = ({ title, content }) => (
-    <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start content-card bg-gray shadow-md p-6 rounded-lg">
-      <div className="flex-1">
-        <h2 className="text-3xl font-bold text-white-500">{title}</h2>
-        <p className="mt-4 text-blue-200 text-lg leading-relaxed">{content}</p>
-      </div>
-    </div>
+    const ContentCard: React.FC<ContentCardProps> = ({ title, content }) => (
+        <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start content-card bg-gray shadow-md p-6 rounded-lg">
+            <div className="flex-1">
+                <h2 className="text-3xl font-bold text-white-500">{title}</h2>
+                <p className="mt-4 mb-6 text-blue-200 text-lg leading-relaxed">{content}</p>
+            </div>
+        </div>
 );
 
 export default function GenerativeAIAdoption() {
@@ -25,7 +25,7 @@ export default function GenerativeAIAdoption() {
         {!isMobile && (
           <header className="w-1/3 max-w-5xl px-6 py-4 text-left">
             <div className="flex">
-              <p className="text-blue-400 opacity-40">C:\Users\WebRodent&gt;</p>
+              <p className="text-blue-400 opacity-40">C:\Users\WebRodent\AI-Adoption&gt;</p>
               <p ref={textRef} className="text-blue-400"></p>
             </div>
           </header>
