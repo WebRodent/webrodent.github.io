@@ -2,7 +2,7 @@ import Image from 'next/image'
 import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
-import MainFooter from '../../lib/components/footers';
+import {MainFooter, SocialFooter} from '../../lib/components/footers';
 
 export default function GenerativeAIAdoption() {
     const isMobile = useMobileDetect();
@@ -20,6 +20,7 @@ export default function GenerativeAIAdoption() {
         )}
 
         <MainFooter />
+        <SocialFooter />
         </main>
     )
 }

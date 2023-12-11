@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import MainFooter from '../lib/components/footers';
+import {MainFooter, SocialFooter} from '../lib/components/footers';
 import useMobileDetect from '../lib/mobileDetect';
 import useTextAnimation from '../lib/textAnimation';
 
@@ -64,6 +64,7 @@ export default function Home() {
       </nav>
 
       <MainFooter />
+      <SocialFooter />
     </main>
   )
 }

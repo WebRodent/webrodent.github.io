@@ -3,7 +3,7 @@ import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
 import ContentCard from '../../lib/components/content';
-import MainFooter from '../../lib/components/footers';
+import {MainFooter, SocialFooter} from '../../lib/components/footers';
 
 export default function GenerativeAIAdoption() {
     const isMobile = useMobileDetect();
@@ -45,6 +45,7 @@ export default function GenerativeAIAdoption() {
         </div>
 
         <MainFooter />
+        <SocialFooter />
         </main>
     )
 }

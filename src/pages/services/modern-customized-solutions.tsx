@@ -3,7 +3,7 @@ import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
 import ContentCard from '../../lib/components/content';
-import MainFooter from '../../lib/components/footers';
+import {MainFooter, SocialFooter} from '../../lib/components/footers';
 
 export default function ModernCustomizedSolutions() {
     const isMobile = useMobileDetect();
@@ -34,6 +34,7 @@ export default function ModernCustomizedSolutions() {
         </div>
 
         <MainFooter />
+        <SocialFooter />
         </main>
     )
 }
