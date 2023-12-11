@@ -2,7 +2,7 @@ import Image from 'next/image'
 import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
-import ContentCard from '../../components/content';
+import {ContentCard} from '../../components/content';
 import {MainFooter, SocialFooter} from '../../components/footers';
 
 export default function ModernCustomizedSolutions() {
