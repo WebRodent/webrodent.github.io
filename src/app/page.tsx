@@ -50,7 +50,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>Generative AI Adoption Plans</h2>
+          <motion.div
+          whileHover={{ scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <h2>Generative AI Adoption Plans</h2></motion.div>
         </a>
         <a
           href="/services/modern-customized-solutions"
@@ -58,7 +62,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>Modern Customized Solutions</h2>
+          <motion.div
+          whileHover={{ scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <h2>Modern Customized Solutions</h2></motion.div>
         </a>
         <a
           href="/services/meet-the-team"
@@ -66,7 +74,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>Meet the Rodents</h2>
+          <motion.div
+          whileHover={{ scale: 1.03 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <h2>Meet the Rodents</h2></motion.div>
         </a>
       </nav>
 
