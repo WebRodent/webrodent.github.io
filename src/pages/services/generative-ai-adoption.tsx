@@ -1,8 +1,12 @@
 import Image from 'next/image'
 import '../../app/globals.css'
 import ContentRow from '../../app/contents'; // Adjust the path as needed
+import useMobileDetect from '../../lib/mobileDetect';
+import useTextAnimation from '../../lib/textAnimation';
 
 export default function GenerativeAIAdoption() {
+    const isMobile = useMobileDetect();
+    const textRef = useTextAnimation(isMobile);
 
     const contents = [
         {
@@ -20,11 +24,14 @@ export default function GenerativeAIAdoption() {
 
     return (
         <main className="flex flex-col items-center justify-top min-h-screen p-6">
-        <header className="w-full max-w-5xl px-6 py-4 text-center">
-            <p className="text-blue-400 bg-gradient-to-b from-zinc-200 to-transparent border-b border-gray-300 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-center">
-            &gt; Generative AI Adoption Plans
-            </p>
-        </header>
+        {!isMobile && (
+          <header className="w-1/3 max-w-5xl px-6 py-4 text-left">
+            <div className="flex">
+              <p className="text-blue-400 opacity-40">C:\Users\WebRodent&gt;</p>
+              <p ref={textRef} className="text-blue-400"></p>
+            </div>
+          </header>
+        )}
 
         {/* Content container */}
       <div className="w-full max-w-5xl flex flex-col gap-12 py-6">
@@ -38,7 +45,6 @@ export default function GenerativeAIAdoption() {
         ))}
       </div>
 
-        
         <footer className="flex flex-col items-center justify-bottom w-full max-w-5xl px-6 py-4 text-center mt-auto">
             <a
             href="https://nest.webrodent.com"

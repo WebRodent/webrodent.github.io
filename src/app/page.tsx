@@ -1,37 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
+import useMobileDetect from '../lib/mobileDetect';
+import useTextAnimation from '../lib/textAnimation';
 
 export default function Home() {
-  const textRef = useRef<HTMLParagraphElement | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-  }, []);
-
-  useEffect(() => {
-    if (!isMobile) {
-      const text = "Welcome to the Web Rodent Nest";
-      let i = 0;
-      const intervalId = setInterval(() => {
-        if (textRef.current) {
-          if (i < text.length) {
-            textRef.current.textContent = text.slice(0, i+1) + '_';
-            i++;
-          } else {
-            textRef.current.textContent = text; // remove "_" character upon completion
-            clearInterval(intervalId);
-          }
-        } else {
-          clearInterval(intervalId);
-        }
-      }, 100); // adjust speed as needed
-
-      return () => clearInterval(intervalId); // cleanup on unmount
-    }
-  }, [isMobile]);
+  const isMobile = useMobileDetect();
+  const textRef = useTextAnimation(isMobile);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6">
