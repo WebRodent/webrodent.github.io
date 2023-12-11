@@ -25,7 +25,7 @@ export default function Home() {
     <div className="z-10 flex flex-col items-center justify-center flex-grow w-full max-w-5xl px-6">
       <div className="relative flex justify-center items-center w-full">
         <div className="absolute inset-0 flex justify-center items-center">
-          <div className="h-[337px] w-[680px] rounded-full bg-gradient-radial from-blue-600 to-transparent blur-2xl opacity-10"/>
+          <div className="h-[237px] w-[680px] rounded-full bg-gradient-radial from-blue-600 to-transparent blur-2xl opacity-10"/>
         </div>
         <motion.div
           whileHover={{ scale: 1.05 }}
