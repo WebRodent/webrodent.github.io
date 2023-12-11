@@ -4,7 +4,7 @@ export function MainFooter() {
     return (
         <footer className="flex flex-col items-center justify-bottom w-full max-w-5xl px-6 py-4 text-center mt-auto">
             <a
-            href="https://nest.webrodent.com"
+            href="/"
             className="flex items-center justify-center gap-2"
             target="_blank"
             rel="noopener noreferrer"
