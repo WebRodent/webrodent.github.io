@@ -2,10 +2,6 @@ import Image from 'next/image'
 import '../../app/globals.css'
 import useMobileDetect from '../../lib/mobileDetect';
 import useTextAnimation from '../../lib/textAnimation';
-
-export default function GenerativeAIAdoption() {
-    const isMobile = useMobileDetect();
-    const textRef = useTextAnimation(isMobile);
   
 type ContentCardProps = {
     title: string;
@@ -22,7 +18,8 @@ type ContentCardProps = {
 );
 
 export default function GenerativeAIAdoption() {
-      
+    const isMobile = useMobileDetect();
+    const textRef = useTextAnimation(isMobile);
     return (
         <main className="flex flex-col items-center justify-top min-h-screen p-6">
         {!isMobile && (
