@@ -61,12 +61,12 @@ export default function Home() {
           <h2>Modern Customized Solutions</h2>
         </a>
         <a
-          href="/services/meet-the-team"
+          href="/services/devs-handbook"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:border-neutral-700 hover:bg-neutral-800/30"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <h2>Meet the Rodents</h2>
+          <h2>Web Rodent Handbook</h2>
         </a>
       </nav>
 
