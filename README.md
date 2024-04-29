@@ -2,7 +2,7 @@
 
 This is the landing page for WebRodent, built with [Next.js](https://nextjs.org/).
 
-## Getting Started
+## Getting Started contributing
 
 First, run the development server:
 ```shell
