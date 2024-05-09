@@ -17,7 +17,8 @@
 			"extensions": [
 				"mongodb.mongodb-vscode",
 				"github.copilot",
-				"github.copilot-chat"
+				"github.copilot-chat",
+				"github.vscode-github-actions"
 			]
 		}
 	}
