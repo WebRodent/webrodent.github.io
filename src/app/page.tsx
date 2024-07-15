@@ -32,7 +32,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Image
-            src="/webrodent_logo_3.svg" // replace with your logo image path
+            src="/webrodent_logo_stripped.svg" // replace with your logo image path
             alt="WebRodent Logo"
             width={680}
             height={537}

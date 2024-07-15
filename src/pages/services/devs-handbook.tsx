@@ -21,8 +21,9 @@ export default function DevHandbook() {
                 </div>
             </header>
             )}
-            {/* The table of contents */}
+            {/* The table of contents, if its desktop */}
             <div className="flex min-w-min">
+                {!isMobile && (
                 <div className="w-1/4 min-w-min">
                 <TableOfContents
                 sections={[
@@ -52,6 +53,7 @@ export default function DevHandbook() {
                     { title: "Viktige Prinsipper og Beste Praksis", id: "viktige-prinsipper-og-beste-praksis", level: 2 },
                 ]} />
                 </div>
+                )}
                 
                 {/* Content container */}
                 <div className="w-3/4 max-w-5xl flex flex-col gap-12 py-6">
