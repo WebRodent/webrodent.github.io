@@ -10,18 +10,18 @@ export default function useTextAnimation(isMobile: boolean, text: string) {
       const intervalId = setInterval(() => {
         if (textRef.current) {
           if (i < text.length) {
-            textRef.current.textContent = text.slice(0, i+1) + '_';
+            textRef.current.textContent = text.slice(0, i+1);
             i++;
           } else {
-            textRef.current.textContent = text + '_'; // keep "_" character upon completion
+            textRef.current.textContent = text; // keep "_" character upon completion
             clearInterval(intervalId);
 
             // Start blinking
-            let blink = true;
+            /*let blink = true;
             blinkIntervalId.current = setInterval(() => {
               textRef.current!.textContent = blink ? text + '_' : text;
               blink = !blink;
-            }, 500); // adjust blink speed as needed
+            }, 500);*/ // adjust blink speed as needed
           }
         } else {
           clearInterval(intervalId);
