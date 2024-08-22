@@ -70,23 +70,23 @@ export default function ServicesSection() {
           <div className="bg-[#2a2a2a] text-white text-center rounded-lg shadow-lg overflow-hidden w-full hover:shadow-2xl transition-shadow duration-300">
             <div className="p-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 mb-4 text-pink-700 mx-auto">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6v11.25A2.25 2.25 0 0 0 6.75 19.5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
               </svg>
-              <h2 className="text-2xl font-semibold mb-4 text-pink-700 text-center">Enkel tilgang til din nettside</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-pink-700 text-center">Chip - Din Smarte AI-Chatbot for Slack</h2>
               <p className="text-lg mb-4">
-                Vi forstår viktigheten av enkel tilgang til din nettside. Uansett hvilken type løsning du velger, ønsker vi å sikre at du har en brukervennlig plattform som gjør det lett å oppdatere og administrere innholdet ditt.
+                Chip er vår avanserte AI-Chatbot designet for å transformere hvordan teamet ditt jobber og samarbeider i Slack. Den er mer enn bare en vanlig chatbot; Chip er en intelligent assistent som kan tilpasses for å møte dine spesifikke behov og preferanser.
               </p>
-              <h3 className="text-xl font-semibold mb-2 text-white">Brukervennlige verktøy</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Tilpasset AI for Effektiv Samhandling</h3>
               <p className="text-lg mb-4">
-                Vi benytter oss av verktøy og rammeverk som gir deg en enkel måte å håndtere innholdet på, uansett hvor teknisk erfaring du måtte ha. Fra enkle tekstredaktører til mer avanserte verktøy, vi sikrer at du har alt du trenger for å holde nettsiden din oppdatert.
+                Chip er skreddersydd for å integreres sømløst i Slack, noe som gjør den til et kraftfullt tillegg til din eksisterende kommunikasjonsplattform. Den håndterer alt fra automatiserte svar på ofte stilte spørsmål til oppgavehåndtering og gir teamet ditt viktig informasjon på en enkel måte.
               </p>
-              <h3 className="text-xl font-semibold mb-2 text-white">Fremtidssikring</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Hvordan Fungerer Integrasjonen?</h3>
               <p className="text-lg mb-4">
-                Vi er opptatt av å bygge løsninger som ikke bare fungerer i dag, men som også er tilpasset fremtidige behov. Ved å bruke moderne teknologier og beste praksis sikrer vi at nettsiden din er godt rustet for fremtidige oppdateringer og krav.
+                Vi tilbyr en enkel og effektiv integrasjonsprosess for å få Chip oppe og gå i Slack. Vårt team vil veilede deg gjennom hver steg, fra konfigurering til tilpasning, for å sikre at Chip fungerer perfekt med din eksisterende arbeidsflyt.
               </p>
-              <h3 className="text-xl font-semibold mb-2 text-white">Hvordan kan vi hjelpe?</h3>
+              <h3 className="text-xl font-semibold mb-2 text-white">Din AI-Chatbot Partner</h3>
               <p className="text-lg">
-                Uansett om du trenger hjelp med å sette opp din nettside for enkel administrasjon eller ønsker råd om de beste verktøyene for dine behov, er vårt team her for å gi deg den støtten du trenger.
+                Med Chip får du en AI-Chatbot som ikke bare er et nyttig verktøy, men en intelligent samarbeidspartner som hjelper deg med å oppnå mer med mindre innsats. La oss hjelpe deg med å integrere Chip i Slack og opplev hvordan moderne teknologi kan forbedre din arbeidsdag.
               </p>
             </div>
           </div>
