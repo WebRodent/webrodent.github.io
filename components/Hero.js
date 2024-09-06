@@ -27,7 +27,7 @@ const Hero = ({
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
   return (
-    <div className="w-screen py-2" style={{ background: 'linear-gradient(90deg, #1a1a30, #010124)' }}> {/* Full width background */}
+    <div className="" style={{ background: 'linear-gradient(90deg, #1a1a30, #010124)' }}> {/* Full width background */}
       <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto" id="about">
         <ScrollAnimationWrapper>
           <motion.div
