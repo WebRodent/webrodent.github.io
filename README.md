@@ -12,12 +12,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Development
 
-To start editing the page, modify `app/page.tsx`. The page auto-updates as you edit the file.
+To start editing the page, modify `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Deployment
 
 The page is deployed to github pages, with deployment artifacts deployed from actions.
-Live deployment can be found [here](https://nest.webrodent.com/).
+Live deployment can be found [here](https://www.webrodent.com/).
 
 ## Contributing
 
