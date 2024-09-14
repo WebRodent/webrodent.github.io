@@ -1,0 +1,48 @@
+{
+  "id": "did:web:webrodent.com",
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    {
+      "@base": "did:web:webrodent.com"
+    }
+  ],
+  "service": [
+    {
+      "id": "#linkeddomains",
+      "type": "LinkedDomains",
+      "serviceEndpoint": {
+        "origins": [
+          "https://webrodent.com/"
+        ]
+      }
+    },
+    {
+      "id": "#hub",
+      "type": "IdentityHub",
+      "serviceEndpoint": {
+        "instances": [
+          "https://hub.did.msidentity.com/v1.0/d01b1697-94d0-4bdf-b1e4-8aeff4b820e7"
+        ]
+      }
+    }
+  ],
+  "verificationMethod": [
+    {
+      "id": "#8477b46a8a1348939254ecc555cbba91vcSigningKey-8f432",
+      "controller": "did:web:webrodent.com",
+      "type": "JsonWebKey2020",
+      "publicKeyJwk": {
+        "crv": "P-256",
+        "kty": "EC",
+        "x": "kxWzgJt3OtEN8IsscG4O5lBc2rqtkkoBKwgUQfcRrKw",
+        "y": "p_StGVo636fsegBmQUMUxIkuQG1xxlp3Mj-QEcMpZlI"
+      }
+    }
+  ],
+  "authentication": [
+    "#8477b46a8a1348939254ecc555cbba91vcSigningKey-8f432"
+  ],
+  "assertionMethod": [
+    "#8477b46a8a1348939254ecc555cbba91vcSigningKey-8f432"
+  ]
+}
