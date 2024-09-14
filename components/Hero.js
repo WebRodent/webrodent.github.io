@@ -10,17 +10,17 @@ const Hero = ({
     {
       name: "Nettsider",
       text: isMobile ? "" : "Skreddersydd for dine behov",
-      icon: "/assets/Icon/website.svg",
+      icon: "/assets/icon/website.svg",
     },
     {
       name: "Hosting",
       text: isMobile ? "" : "Vi hjelper deg med hosting",
-      icon: "/assets/Icon/server.svg",
+      icon: "/assets/icon/server.svg",
     },
     {
       name: "AI-Tjenester",
       text: isMobile ? "" : "CHIP - Din AI-bot for Slack",
-      icon: "/assets/Icon/chip.svg",
+      icon: "/assets/icon/chip.svg",
     },
   ],
 }) => {
