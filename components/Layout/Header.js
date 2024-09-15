@@ -3,13 +3,31 @@ import React, { useState, useEffect } from "react";
 import { Link as LinkScroll } from "react-scroll";
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState(null);
+  const [activeLink, setActiveLink] = useState("home");
   const [scrollActive, setScrollActive] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
+  
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScrollActive(window.scrollY > 20);
+
+      const bottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight;
+      setIsAtBottom(bottom);
+      
+      if (bottom) {
+        setActiveLink("contact");
+      }
     });
   }, []);
+
+  // Done due to limitations in the library, or something like that. Viewport offsets can apparently destroy worlds. 1500 seconds seems to be the sweet spot.
+  const handleActiveClick = (itemName) => {
+    setActiveLink(itemName);
+    setTimeout(() => {
+      setActiveLink(itemName);
+    }, 1500);
+  };
+
   return (
     <>
       <header
@@ -25,16 +43,18 @@ const Header = () => {
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
               activeClass="active"
-              to="about"
+              to="home"
               spy={true}
               smooth={true}
+              offset={-100}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink("home");
               }}
+              onClick={() => handleActiveClick("home")}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "about"
+                (activeLink === "home"
                   ? " text-orange-500 animation-active "
                   : " text-black-500 hover:text-orange-500 a")
               }
@@ -51,6 +71,7 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink("feature");
               }}
+              onClick={() => handleActiveClick("feature")}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "feature"
@@ -70,6 +91,7 @@ const Header = () => {
               onSetActive={() => {
                 setActiveLink("pricing");
               }}
+              onClick={() => handleActiveClick("pricing")}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
                 (activeLink === "pricing"
@@ -81,17 +103,18 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="contact"
               spy={true}
               smooth={true}
               offset={-100}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("contact");
               }}
+              onClick={() => handleActiveClick("contact")}
               className={
                 "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "testimoni"
+                (activeLink === "contact"
                   ? " text-orange-500 animation-active "
                   : " text-black-500 hover:text-orange-500 ")
               }
@@ -108,16 +131,16 @@ const Header = () => {
           <ul className="flex w-full justify-between items-center text-black-500">
             <LinkScroll
               activeClass="active"
-              to="about"
+              to="home"
               spy={true}
               smooth={true}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("about");
+                setActiveLink("home");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "about"
+                (activeLink === "home"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent")
               }
@@ -204,17 +227,17 @@ const Header = () => {
             </LinkScroll>
             <LinkScroll
               activeClass="active"
-              to="testimoni"
+              to="contact"
               spy={true}
               smooth={true}
-              offset={-50}
+              offset={-200}
               duration={1000}
               onSetActive={() => {
-                setActiveLink("testimoni");
+                setActiveLink("contact");
               }}
               className={
                 "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "testimoni"
+                (activeLink === "contact"
                   ? "  border-orange-500 text-orange-500"
                   : " border-transparent ")
               }
