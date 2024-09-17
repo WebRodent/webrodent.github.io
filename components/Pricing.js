@@ -71,9 +71,9 @@ const Pricing = () => {
                   </li>
                 </ul>
                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                  <p className="text-2xl text-white-500 text-center mb-4 ">
-                    3 999,-
-                  </p>
+                  <a href="mailto:sales@webrodent.com" className="text-2xl text-white-500 text-center mb-4">
+                    Kontakt salg
+                  </a>
                 </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -117,9 +117,9 @@ const Pricing = () => {
                 </li>
               </ul>
               <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
-                <p className="text-2xl text-white-500 text-center mb-4 ">
-                  3 999,- (+ 999,- pr. ekstra side)<span className="text-black-500"></span>
-                </p>
+                <a href="mailto:sales@webrodent.com" className="text-2xl text-white-500 text-center mb-4">
+                  Kontakt salg
+                </a>
               </div>
               </motion.div>
             </ScrollAnimationWrapper>
@@ -191,13 +191,19 @@ const Pricing = () => {
                     Kontakt oss
                   </h5><br />
                     <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                      oyvind@webrodent.com
+                      <a href="mailto:oyvind@webrodent.com">
+                        oyvind@webrodent.com
+                      </a>
                     </h5>
                     <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                      mats@webrodent.com
+                      <a href="mailto:mats@webrodent.com">
+                        mats@webrodent.com
+                      </a>
                     </h5>
                     <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                      ruben@webrodent.com
+                      <a href="mailto:ruben@webrodent.com">
+                        ruben@webrodent.com
+                      </a>
                     </h5>
                   
                 </div>
