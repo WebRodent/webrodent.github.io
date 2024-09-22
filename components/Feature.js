@@ -8,7 +8,7 @@ const features = [
   "Skreddersydde nettsider",
   "Du får eierskap over koden!",
   "Vi hjelper deg med å finne hostingløsninger",
-  "CHIP - Vår AI for Slack, spesialisert for deg og ditt teams behov"
+  "CHIP - Vår AI-Bot, spesialisert for deg og ditt teams behov"
 ]
 
 const Feature = () => {

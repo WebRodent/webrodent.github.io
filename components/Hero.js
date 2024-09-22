@@ -19,7 +19,7 @@ const Hero = ({
     },
     {
       name: "AI-Tjenester",
-      text: isMobile ? "" : "CHIP - Din AI-bot for Slack",
+      text: isMobile ? "" : "CHIP - Din AI-bot",
       icon: "/assets/icon/chip.svg",
     },
   ],
