@@ -143,14 +143,14 @@ const Pricing = () => {
                                     />
                                 </div>
                                 <p className="text-lg text-white-500 font-medium capitalize my-2 sm:my-7">
-                                    CHIP - AI for Slack
+                                    CHIP - AI-Bot
                                 </p>
                                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-white-500 flex-grow">
                                     <li className="relative check custom-list my-2">
                                         Transformer hvordan ditt team jobber
                                     </li>
                                     <li className="relative check custom-list my-2">
-                                        Integrer sømløst med Slack
+                                        Integrer sømløst med kommunikasjonsløsninger
                                     </li>
                                     <li className="relative check custom-list my-2">
                                         AI spesialisert for deg og din bedrift
@@ -192,23 +192,8 @@ const Pricing = () => {
                                             Kontakt vårt team
                                         </h5><br />
                                         <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                                            <a href="mailto:oyvind@webrodent.com">
-                                                Daglig leder: Øyvind
-                                            </a>
-                                        </h5>
-                                        <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                                            <a href="mailto:mats@webrodent.com">
-                                                Finans: Mats
-                                            </a>
-                                        </h5>
-                                        <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
-                                            <a href="mailto:ruben@webrodent.com">
-                                                Teknisk: Ruben
-                                            </a>
-                                        </h5>
-                                        <h5 className="text-black-600 text-lg sm:text-1xl lg:text-2xl leading-relaxed font-medium">
                                             <a href="mailto:post@webrodent.com">
-                                                Generell: post
+                                                post@webrodent.com
                                             </a>
                                         </h5>
                                     </div>
