@@ -5,9 +5,9 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 
 const features = [
-  "Skreddersydde nettsider",
+  "Automatiserte løsninger",
   "Du får eierskap over koden!",
-  "Vi hjelper deg med å finne hostingløsninger",
+  "Vi hjelper deg med hostingløsninger",
   "CHIP - Vår AI-Bot, spesialisert for deg og ditt teams behov"
 ]
 
