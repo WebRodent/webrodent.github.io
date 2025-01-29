@@ -5,10 +5,10 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 
 const features = [
+  "Konsulenttjenester - Nyskapning, videreutvikling og modernisering",
+  "ARO - Automatisert løsning for innrapportering av Aksjonærregisteroppgaven",
   "Skreddersydde nettsider",
-  "Du får eierskap over koden!",
-  "Vi hjelper deg med å finne hostingløsninger",
-  "CHIP - Vår AI-Bot, spesialisert for deg og ditt teams behov"
+  "Du får ALLTID eierskap over koden!",
 ]
 
 const Feature = () => {
