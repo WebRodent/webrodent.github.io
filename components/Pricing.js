@@ -51,11 +51,14 @@ const Pricing = () => {
                                     />
                                 </div>
                                 <p className="text-lg text-white-500 font-medium capitalize my-2 sm:my-7">
-                                    Enkel nettside
+                                    "ARO"
                                 </p>
                                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-white-500 flex-grow">
                                     <li className="relative check custom-list my-2">
-                                        "Single-page" nettside
+                                        Automatisert for regnskapsbransjen
+                                    </li>
+                                    <li className="relative check custom-list my-2">
+                                        Aksjonærregisteroppgaven gjort lettvint for deg og dine kunder
                                     </li>
                                     <li className="relative check custom-list my-2">
                                         Responsivt design
@@ -64,10 +67,9 @@ const Pricing = () => {
                                         Optimalisert for PC og Mobil
                                     </li>
                                     <li className="relative check custom-list my-2">
-                                        Skreddersydd etter dine ønsker
-                                    </li>
-                                    <li className="relative check custom-list my-2">
-                                        Vi hjelper deg med å finne hosting
+                                        <a href="https://aro.oppgaven.com/welcome">
+                                            www.aro.oppgaven.com
+                                        </a>
                                     </li>
                                 </ul>
                                 <div className="flex flex-col w-full justify-center mb-8 flex-none mt-12">
@@ -97,11 +99,11 @@ const Pricing = () => {
                                     />
                                 </div>
                                 <p className="text-lg text-white-500 font-medium capitalize my-2 sm:my-7">
-                                    Flerside-Nettside
+                                    Nettsider
                                 </p>
                                 <ul className="flex flex-col list-inside pl-6 xl:pl-0 items-start justify-start text-left text-white-500 flex-grow">
                                     <li className="relative check custom-list my-2">
-                                        Nettside med navigasjon
+                                        Statisk eller dynamisk Nettside
                                     </li>
                                     <li className="relative check custom-list my-2">
                                         Responsivt design

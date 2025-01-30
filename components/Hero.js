@@ -8,7 +8,7 @@ import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 const Hero = ({
   list = [
     {
-      name: "Nettsider",
+      name: "Løsninger",
       text: isMobile ? "" : "Skreddersydd for dine behov",
       icon: "/assets/icon/website.svg",
     },
