@@ -1,0 +1,947 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core colors */
+  --bg-deep: #010124;
+  --bg-mid: #1a1a30;
+  --accent-primary: #E439F4;
+  --accent-secondary: #07EDF8;
+  
+  /* Enhanced gradient presets */
+  --gradient-hero: linear-gradient(135deg, 
+    rgba(7, 237, 248, 0.15) 0%,
+    rgba(228, 57, 244, 0.15) 100%
+  );
+  
+  --gradient-card: linear-gradient(135deg, 
+    rgba(7, 237, 248, 0.1) 0%,
+    rgba(228, 57, 244, 0.1) 100%
+  );
+  
+  /* Neon effects */
+  --neon-primary: 0 0 10px rgba(228, 57, 244, 0.3),
+                 0 0 20px rgba(228, 57, 244, 0.2),
+                 0 0 30px rgba(228, 57, 244, 0.1);
+  
+  --neon-secondary: 0 0 10px rgba(7, 237, 248, 0.3),
+                   0 0 20px rgba(7, 237, 248, 0.2),
+                   0 0 30px rgba(7, 237, 248, 0.1);
+}
+
+/* Modern card styling */
+.modern-card {
+  background: rgba(26, 26, 48, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  position: relative;
+  padding: 2px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Inner content container - update this */
+.modern-card > div {
+  background: rgba(26, 26, 48, 0.3);
+  border-radius: 22px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Add specific padding classes */
+.modern-card-sm > div {
+  padding: 1rem;
+}
+
+.modern-card-md > div {
+  padding: 1.5rem;
+}
+
+.modern-card-lg > div {
+  padding: 2rem;
+}
+
+/* Gradient border effect */
+.modern-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(152, 99, 228, 0.8),
+    rgba(228, 57, 244, 0.4)
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+/* Hover effects */
+.modern-card:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(228, 57, 244, 0.8),
+    rgba(7, 237, 248, 0.4)
+  );
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(228, 57, 244, 0.15);
+}
+
+/* Glow effect */
+.modern-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(152, 99, 228, 0.2),
+    rgba(228, 57, 244, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.modern-card:hover::after {
+  opacity: 1;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  background: #010124;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.gradient-orb {
+  position: absolute;
+  width: 150vmax;
+  height: 150vmax;
+  top: -75vmax;
+  left: -75vmax;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(7, 237, 248, 0.15),
+    rgba(228, 57, 244, 0.15),
+    rgba(7, 237, 248, 0.15)
+  );
+  animation: orb-rotate 20s linear infinite;
+  will-change: transform;
+}
+
+@keyframes orb-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Glowing text effect */
+.glow-text {
+  color: white;
+  text-shadow: 0 0 10px rgba(228, 57, 244, 0.3),
+               0 0 20px rgba(228, 57, 244, 0.2),
+               0 0 30px rgba(228, 57, 244, 0.1);
+  transition: text-shadow 0.3s ease;
+}
+
+.glow-text:hover {
+  text-shadow: var(--neon-secondary);
+}
+
+/* Modern section styling */
+.modern-section {
+  position: relative;
+  padding: 8rem 0;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--bg-deep) 0%,
+    rgba(4, 35, 61, 0.8) 50%,
+    var(--bg-deep) 100%
+  );
+}
+
+.modern-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(228, 57, 244, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.modern-section:hover::before {
+  opacity: 1;
+}
+
+/* Floating elements */
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Accent line effects */
+.accent-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.accent-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.accent-line:hover::after {
+  transform: scaleX(1);
+}
+
+/* Create a continuous flowing background */
+.continuous-flow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(
+      circle at 75% 25%,
+      var(--accent-primary) 0%,
+      transparent var(--gradient-pos-1)
+    ),
+    radial-gradient(
+      circle at 25% 50%,
+      var(--accent-secondary) 0%,
+      transparent var(--gradient-pos-2)
+    ),
+    radial-gradient(
+      circle at 60% 75%,
+      var(--accent-primary) 0%,
+      transparent var(--gradient-pos-3)
+    ),
+    var(--bg-deep);
+  z-index: -1;
+  opacity: 0.15;
+  animation: flowBackground 30s ease-in-out infinite;
+}
+
+@keyframes flowBackground {
+  0%, 100% {
+    --gradient-pos-1: 15%;
+    --gradient-pos-2: 45%;
+    --gradient-pos-3: 75%;
+  }
+  50% {
+    --gradient-pos-1: 25%;
+    --gradient-pos-2: 55%;
+    --gradient-pos-3: 85%;
+  }
+}
+
+/* Add a noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,...'); /* We'll add a noise SVG pattern */
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Section styling with glass morphism */
+.section-glass {
+  background: rgba(26, 26, 48, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  margin: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Animated accent borders */
+.accent-border {
+  position: relative;
+}
+
+.accent-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    45deg,
+    var(--accent-primary),
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+  border-radius: inherit;
+  z-index: -1;
+  animation: borderFlow 3s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Interactive hover effects */
+.hover-expand {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-expand:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(var(--accent-primary, 228, 57, 244), 0.2);
+}
+
+/* Apply background to all key elements */
+html,
+body,
+#__next {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: white;
+  min-height: 100vh;
+  background: var(--bg-deep);
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header background with slight opacity */
+.header-bg {
+  background: rgba(26, 26, 48, 0.9);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease-in-out;
+}
+
+.header-bg.scrolled {
+  background: rgba(26, 26, 48, 0.95);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer background with proper opacity and contrast */
+.footer-bg {
+  background: linear-gradient(180deg, var(--accent-purple) 0%, var(--gradient-darker) 100%);
+  position: relative;
+  z-index: 40;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Update section gradients for seamless flow */
+.hero-gradient {
+  background: radial-gradient(circle at top right, 
+    var(--accent-purple) 0%,
+    var(--gradient-dark) 40%,
+    var(--hero-end) 100%
+  );
+  position: relative;
+}
+
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--products-start)
+  );
+}
+
+.services-gradient {
+  background: linear-gradient(180deg, 
+    var(--products-start) 0%,
+    var(--accent-purple) 50%,
+    var(--products-end) 100%
+  );
+  position: relative;
+}
+
+.services-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top,
+    transparent,
+    var(--products-start)
+  );
+}
+
+.services-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--testimonials-start)
+  );
+}
+
+.section-gradient {
+  background: linear-gradient(180deg,
+    var(--testimonials-start) 0%,
+    var(--accent-purple) 50%,
+    var(--testimonials-end) 100%
+  );
+  position: relative;
+}
+
+.section-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top,
+    transparent,
+    var(--testimonials-start)
+  );
+}
+
+.section-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom,
+    transparent,
+    var(--about-start)
+  );
+}
+
+/* Add connecting elements */
+.section-connector {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-connector::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.7;
+}
+
+/* Update section padding to account for gradients */
+.section-padding {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Add wave separators */
+.wave-separator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-separator svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.wave-separator .shape-fill {
+  fill: var(--gradient-darker);
+}
+
+/* Add these utility classes */
+.bg-gradient-primary {
+  background: linear-gradient(90deg, var(--background-start), var(--background-end)) fixed;
+}
+
+.bg-gradient-vertical {
+  background: linear-gradient(180deg, var(--background-start), var(--background-end));
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+@media (max-width: 1024px) {
+  .section-padding-mobile {
+    padding-bottom: 80px;
+  }
+  .footer-bg {
+    padding-bottom: calc(64px + 2rem) !important; /* Account for mobile nav height plus some spacing */
+  }
+  
+  .mobile-nav-wrapper {
+    height: 64px; /* Match mobile nav height */
+    width: 100%;
+  }
+}
+
+/* Add these styles */
+.mobile-nav {
+  background: linear-gradient(to bottom, var(--gradient-darker), var(--background-end));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px; /* Fixed height for mobile nav */
+  backdrop-filter: blur(8px);
+}
+
+.mobile-nav-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-item.active {
+  color: #E439F4;
+}
+
+.mobile-nav-item.active svg {
+  transform: translateY(-2px);
+}
+
+.mobile-nav-item:not(.active):hover {
+  color: #E439F4;
+  transform: translateY(-2px);
+}
+
+/* Add this media query for desktop */
+@media (min-width: 1024px) {
+  .footer-bg {
+    padding-bottom: 24px;
+  }
+}
+
+/* Add these animation classes */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.header-scroll-animation {
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Update nav item styles - make them more explicit */
+.nav-item {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+  padding-bottom: 2px;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #E439F4; /* Use direct color instead of var() */
+  transition: width 0.3s ease;
+  transform-origin: left;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #E439F4;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
+  overflow-y: scroll; /* Maintain scroll functionality */
+  background: linear-gradient(90deg, var(--background-start), var(--background-end));
+  min-height: 100%;
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add these styles for footer hover effects */
+.footer-link {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #E439F4;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* Add these new utility classes */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 6px -1px var(--glass-shadow);
+}
+
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -8px var(--glass-shadow);
+}
+
+/* Add glow effects */
+.glow {
+  position: relative;
+}
+
+.glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: var(--gradient-accent);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Add these new background effects */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.05;
+  animation: float-around 20s linear infinite;
+}
+
+.particle-small {
+  width: 100px;
+  height: 100px;
+}
+
+.particle-medium {
+  width: 200px;
+  height: 200px;
+}
+
+.particle-large {
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes float-around {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30%, -30%) rotate(120deg);
+  }
+  66% {
+    transform: translate(-30%, 30%) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Update section transitions */
+.section-transition {
+  position: relative;
+}
+
+.section-transition::before,
+.section-transition::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+}
+
+.section-transition::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-deep), transparent);
+}
+
+.section-transition::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-deep), transparent);
+}
+
+/* Update about section gradient */
+.about-gradient {
+  background: linear-gradient(180deg,
+    var(--about-start) 0%,
+    var(--gradient-darker) 50%,
+    var(--about-end) 100%
+  );
+}
+
+/* Update contact section gradient */
+.contact-gradient {
+  background: linear-gradient(180deg,
+    var(--contact-start) 0%,
+    var(--accent-purple) 50%,
+    var(--contact-end) 100%
+  );
+}
+
+/* Add smooth transition between sections */
+.section-overlap {
+  margin-top: -100px; /* Create overlap between sections */
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add glow lines */
+.glow-line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent-purple),
+    transparent
+  );
+  opacity: 0.2;
+  animation: glow-line-float 8s ease-in-out infinite;
+}
+
+@keyframes glow-line-float {
+  0%, 100% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+}
+
+/* Update card styling */
+.gradient-card {
+  background: var(--gradient-card);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.gradient-card:hover {
+  background: var(--gradient-card-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(var(--accent-primary, 228, 57, 244), 0.2);
+}
+
+/* Add mesh gradient background */
+.mesh-gradient {
+  background-color: var(--bg-deep);
+  background-image: 
+    radial-gradient(at 40% 20%, rgba(7, 237, 248, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(228, 57, 244, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(7, 237, 248, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(228, 57, 244, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(7, 237, 248, 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, rgba(228, 57, 244, 0.1) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: meshMove 15s linear infinite;
+}
+
+@keyframes meshMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Update section transitions */
+.section-fade {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-fade::before,
+.section-fade::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+}
+
+.section-fade::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-deep), transparent);
+}
+
+.section-fade::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-deep), transparent);
+}
+
+/* Add this to ensure gradients work in production */
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Hide scrollbar completely */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+/* Ensure smooth scrolling still works */
+html, body {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+}
+
+/* Prevent horizontal scroll */
+#__next {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}

@@ -4,11 +4,13 @@ import Header from "./Header";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="bg-gradient-primary min-h-screen flex flex-col">
       <Header />
-      {children}
+      <main className="flex-grow">
+        {children}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

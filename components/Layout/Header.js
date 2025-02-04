@@ -28,11 +28,20 @@ const Header = () => {
     }, 1500);
   };
 
+  // Update the navigation items for both desktop and mobile
+  const navigationItems = [
+    { id: "home", name: "Hjem", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+    { id: "products", name: "Produkter", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
+    { id: "omtale", name: "Omtale", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
+    { id: "about", name: "Om Oss", icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" },
+    { id: "contact", name: "Kontakt", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }
+  ];
+
   return (
     <>
       <header
         className={
-          "fixed top-0 w-full  z-30 bg-white-500 transition-all " +
+          "fixed top-0 w-full z-30 transition-all header-bg" +
           (scrollActive ? " shadow-md pt-0" : " pt-4")
         }
       >
@@ -40,230 +49,78 @@ const Header = () => {
           <div className="col-start-1 col-end-2 flex items-center">
             {/* Replace text with logo */}
             <img
-              src="/assets/Rodent_Web_logo.png"
+              src="assets/Rodent_Web_logo.png"
               alt="Webrodent Logo"
               className="h-6 md:h-8 lg:h-10 xl:h-12"
             />
             <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold ps-4">WEBRODENT</h1>     
           </div>
-          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
-            <LinkScroll
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("home");
-              }}
-              onClick={() => handleActiveClick("home")}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "home"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 a")
-              }
-            >
-              Hjem
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              onClick={() => handleActiveClick("feature")}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "feature"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Tjenester
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("pricing");
-              }}
-              onClick={() => handleActiveClick("pricing")}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "pricing"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Priser
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("contact");
-              }}
-              onClick={() => handleActiveClick("contact")}
-              className={
-                "px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative" +
-                (activeLink === "contact"
-                  ? " text-orange-500 animation-active "
-                  : " text-black-500 hover:text-orange-500 ")
-              }
-            >
-              Kontakt
-            </LinkScroll>
+          <ul className="hidden lg:flex col-start-4 col-end-8 text-white items-center">
+            {navigationItems.map((item) => (
+              <LinkScroll
+                key={item.id}
+                activeClass="active"
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={1000}
+                onSetActive={() => setActiveLink(item.id)}
+                onClick={() => handleActiveClick(item.id)}
+                className={`px-4 py-2 mx-2 cursor-pointer relative group`}
+              >
+                <span className={`relative z-10 ${
+                  activeLink === item.id 
+                    ? "text-[#E439F4]" 
+                    : "text-white hover:text-[#E439F4]"
+                } transition-colors duration-300`}>
+                  {item.name}
+                </span>
+                {activeLink === item.id && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#E439F4] transform origin-left transition-transform duration-300"></span>
+                )}
+              </LinkScroll>
+            ))}
           </ul>
         </nav>
       </header>
       {/* Mobile Navigation */}
-
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
-        <div className="bg-white-500 sm:px-3">
-          <ul className="flex w-full justify-between items-center text-black-500">
-            <LinkScroll
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("home");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "home"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+      <nav className="mobile-nav lg:hidden">
+        <div className="h-full px-4 py-2">
+          <ul className="flex w-full h-full justify-between items-center text-white">
+            {navigationItems.map((item) => (
+              <LinkScroll
+                key={item.id}
+                activeClass="active"
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={1000}
+                onSetActive={() => setActiveLink(item.id)}
+                className={`mobile-nav-item flex flex-col items-center justify-center text-xs transition-all ${
+                  activeLink === item.id
+                    ? "text-[#E439F4]"
+                    : "text-white hover:text-[#E439F4]"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              Hjem
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="feature"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("feature");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "feature"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                />
-              </svg>
-              Tjenester
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="pricing"
-              spy={true}
-              smooth={true}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("pricing");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "pricing"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              Priser
-            </LinkScroll>
-            <LinkScroll
-              activeClass="active"
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-200}
-              duration={1000}
-              onSetActive={() => {
-                setActiveLink("contact");
-              }}
-              className={
-                "mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-                (activeLink === "contact"
-                  ? "  border-orange-500 text-orange-500"
-                  : " border-transparent ")
-              }
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                />
-              </svg>
-              Kontakt
-            </LinkScroll>
+                <svg
+                  className="w-6 h-6 mb-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d={item.icon}
+                  />
+                </svg>
+                <span className="text-xs">{item.name}</span>
+              </LinkScroll>
+            ))}
           </ul>
         </div>
       </nav>

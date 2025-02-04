@@ -48,12 +48,9 @@ const Hero = ({
             </div>
             <div className="flex w-full">
               <motion.div className="h-full w-full" variants={scrollAnimation}>
-                <Image
-                  src="/assets/Illustration1.png"
+                <img
+                  src="assets/Illustration1.png"
                   alt="Illustration"
-                  quality={100}
-                  width={612}
-                  height={383}
                   style={{ width: '100%', height: 'auto' }}
                 />
               </motion.div>
@@ -72,7 +69,7 @@ const Hero = ({
               >
                 <div className="flex mx-auto w-40 sm:w-auto">
                   <div className="flex items-center justify-center bg-orange-100 w-12 h-12 mr-6 rounded-full">
-                    <img src={list.icon} className="h-6 w-6" />
+                    <img src={`assets${list.icon}`} className="h-6 w-6" alt={list.name} />
                   </div>
                   <div className="flex flex-col">
                     <p className="text-xl text-black-600 font-bold">

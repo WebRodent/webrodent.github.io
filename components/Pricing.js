@@ -44,7 +44,7 @@ const Pricing = () => {
                             >
                                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
                                     <Image
-                                        src="/assets/icon/singlepage.svg"
+                                        src="./assets/icon/singlepage.svg"
                                         width={145}
                                         height={165}
                                         alt="Free Plan"
@@ -90,7 +90,7 @@ const Pricing = () => {
                             >
                                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
                                     <Image
-                                        src="/assets/icon/dualpage.svg"
+                                        src="./assets/icon/dualpage.svg"
                                         width={145}
                                         height={165}
                                         alt="Standard Plan"
@@ -136,7 +136,7 @@ const Pricing = () => {
                             >
                                 <div className="p-4 lg:p-0 mt-6 lg:mt-16">
                                     <Image
-                                        src="/assets/icon/chip4.svg"
+                                        src="./assets/icon/chip4.svg"
                                         width={145}
                                         height={165}
                                         alt="Premium Plan"
@@ -199,7 +199,7 @@ const Pricing = () => {
                                     </div>
                                     <div className="relative w-1/4 h-60">
                                     <Image
-                                        src="/assets/wr_logo_black.png"
+                                        src="./assets/wr_logo_black.png"
                                         layout="fill"
                                         objectFit="contain"
                                         alt="Team Image"

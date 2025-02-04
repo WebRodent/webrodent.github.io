@@ -1,8 +1,6 @@
 module.exports = {
   content: [
-    "./pages/*.js",
     "./pages/**/*.js",
-    "./components/*.js",
     "./components/**/*.js",
   ],
   theme: {
@@ -18,7 +16,21 @@ module.exports = {
       "orange-md": "0px 20px 40px -15px rgba(245,56,56,0.81) ",
       none: "none",
     },
-    extend: {},
+    extend: {
+      colors: {
+        'background-start': '#1a1a30',
+        'background-end': '#010124',
+        'gradient-dark': '#04233d',
+        'gradient-darker': '#05132b',
+        'accent-purple': '#65334D',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(90deg, var(--background-start), var(--background-end))',
+        'gradient-vertical': 'linear-gradient(180deg, var(--background-start), var(--background-end))',
+        'gradient-radial': 'radial-gradient(circle, var(--gradient-dark) 0%, var(--gradient-darker) 40%)',
+        'gradient-services': 'linear-gradient(180deg, var(--gradient-darker) 0%, var(--accent-purple) 100%)',
+      },
+    },
   },
   variants: {
     extend: {
