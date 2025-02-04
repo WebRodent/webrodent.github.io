@@ -188,27 +188,28 @@ const Home = () => {
       
       <main className="relative z-10">
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-4 modern-section">
+        <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-4 modern-section">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center relative z-10"
+            className="text-center relative z-10 px-4 md:px-0"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 glow-text">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 glow-text">
               Din Digitale Fremtid
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12">
+            <p className="text-lg md:text-2xl text-white/90 mb-8 md:mb-12">
               Vi leverer moderne løsninger for din bedrift.
             </p>
             <ScrollLink
               to="products"
               smooth
               duration={500}
-              className="modern-card inline-flex items-center px-8 py-4 text-lg font-medium hover:text-[var(--accent-secondary)] cursor-pointer group"
+              className="modern-card inline-flex items-center cursor-pointer group"
             >
-              Utforsk våre tjenester
-              <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform duration-300" />
+              <div className="px-6 py-3 md:px-8 md:py-4">
+                <span className="text-base md:text-lg">Utforsk våre tjenester</span>
+              </div>
             </ScrollLink>
           </motion.div>
 
@@ -236,7 +237,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
@@ -253,7 +254,11 @@ const Home = () => {
                   key={service.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ 
+                    duration: 0.3,
+                    delay: index * 0.1
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
                   className="modern-card float-element"
                 >
                   <div className="p-8">
@@ -272,7 +277,11 @@ const Home = () => {
                           <motion.div
                             initial={{ scale: 0 }}
                             whileInView={{ scale: 1 }}
-                            transition={{ delay: index * 0.2 + idx * 0.1 }}
+                            transition={{ 
+                              duration: 0.2,
+                              delay: index * 0.1 + idx * 0.05
+                            }}
+                            viewport={{ once: true }}
                             className="mr-3"
                             style={{ color: 'var(--accent-secondary)' }}
                           >
@@ -297,7 +306,7 @@ const Home = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
@@ -314,12 +323,13 @@ const Home = () => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
                   className="modern-card float-element"
                 >
                   <div className="p-8">
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[var(--accent-secondary)] shadow-[var(--neon-secondary)]">
+                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#07EDF8] shadow-[0_0_10px_rgba(7,237,248,0.3)]">
                         <img 
                           src={testimonial.image || `https://api.dicebear.com/6.x/initials/svg?seed=${testimonial.name}`} 
                           alt={testimonial.name} 
@@ -327,8 +337,8 @@ const Home = () => {
                         />
                       </div>
                       <div>
-                        <p className="text-[var(--accent-secondary)] font-semibold">{testimonial.name}</p>
-                        <p className="text-white/60 text-sm">{testimonial.role}</p>
+                        <p className="testimonial-name font-semibold">{testimonial.name}</p>
+                        <p className="testimonial-role">{testimonial.role}</p>
                       </div>
                     </div>
                     <div className="relative">
@@ -350,7 +360,7 @@ const Home = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">Om Oss</h2>
@@ -361,7 +371,7 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
                 className="space-y-8"
               >
                 <div className="modern-card">
@@ -406,14 +416,14 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
                 className="relative"
               >
-                <div className="modern-card p-1 hover-lift overflow-hidden">
+                <div className="modern-card p-1">
                   <img
                     src="assets/hero.gif"
                     alt="About Webrodent"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full h-full object-cover rounded-[22px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-deep)] via-transparent to-transparent"></div>
                 </div>
@@ -428,7 +438,7 @@ const Home = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4 }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">Kontakt Oss</h2>
@@ -439,7 +449,7 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
                 className="space-y-8"
               >
                 <div className="modern-card">
@@ -457,7 +467,7 @@ const Home = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <div className="px-8 py-4">
+                      <div className="px-8 py-4 text-lg font-medium hover:text-[var(--accent-secondary)]">
                         <span>Send oss en e-post</span>
                         <svg 
                           className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 inline" 
@@ -473,43 +483,47 @@ const Home = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="modern-card p-6 hover-lift">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+                  <div className="modern-card">
+                    <div className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-xl font-bold text-white">E-post</h4>
                       </div>
-                      <h4 className="text-xl font-bold text-white">E-post</h4>
+                      <a 
+                        href="mailto:post@webrodent.com" 
+                        className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300"
+                      >
+                        post@webrodent.com
+                      </a>
                     </div>
-                    <a 
-                      href="mailto:post@webrodent.com" 
-                      className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300"
-                    >
-                      post@webrodent.com
-                    </a>
                   </div>
 
-                  <div className="modern-card p-6 hover-lift">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                        </svg>
+                  <div className="modern-card">
+                    <div className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                          </svg>
+                        </div>
+                        <h4 className="text-xl font-bold text-white">Følg oss</h4>
                       </div>
-                      <h4 className="text-xl font-bold text-white">Følg oss</h4>
+                      <a 
+                        href="https://github.com/WebRodent" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300 flex items-center space-x-2"
+                      >
+                        <span>GitHub</span>
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495 0 .108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+                        </svg>
+                      </a>
                     </div>
-                    <a 
-                      href="https://github.com/WebRodent" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300 flex items-center space-x-2"
-                    >
-                      <span>GitHub</span>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495 0 .108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -517,7 +531,7 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
                 className="relative"
               >
                 <div className="modern-card p-12 hover-lift h-full flex items-center justify-center">

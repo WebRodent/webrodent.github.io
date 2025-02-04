@@ -30,18 +30,18 @@
                    0 0 30px rgba(7, 237, 248, 0.1);
 }
 
-/* Modern card styling */
+/* Modern card styling with size variants */
 .modern-card {
   background: rgba(26, 26, 48, 0.3);
   backdrop-filter: blur(12px);
   border-radius: 24px;
   position: relative;
   padding: 2px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
-/* Inner content container - update this */
+/* Inner content container with default padding */
 .modern-card > div {
   background: rgba(26, 26, 48, 0.3);
   border-radius: 22px;
@@ -49,19 +49,22 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  padding: 1.5rem; /* Default smaller padding */
 }
 
-/* Add specific padding classes */
-.modern-card-sm > div {
+/* Compact variant */
+.modern-card.compact > div {
   padding: 1rem;
 }
 
-.modern-card-md > div {
-  padding: 1.5rem;
+/* Button variant */
+.modern-card.button > div {
+  padding: 0.75rem 1.5rem;
 }
 
-.modern-card-lg > div {
-  padding: 2rem;
+/* Image variant */
+.modern-card.image > div {
+  padding: 0;
 }
 
 /* Gradient border effect */
@@ -197,12 +200,12 @@
 
 /* Floating elements */
 .float-element {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* Grid pattern overlay */
@@ -369,8 +372,9 @@ body {
 
 /* Header background with slight opacity */
 .header-bg {
-  background: rgba(26, 26, 48, 0.9);
+  background: rgba(1, 1, 36, 0.8);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: all 0.3s ease-in-out;
 }
 
@@ -554,22 +558,38 @@ body {
   }
 }
 
-/* Add these styles */
+/* Mobile navigation improvements */
 .mobile-nav {
-  background: linear-gradient(to bottom, var(--gradient-darker), var(--background-end));
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  background: rgba(1, 1, 36, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 2px solid rgba(228, 57, 244, 0.1);
+  padding: 0.75rem 1rem;
   z-index: 50;
-  height: 64px; /* Fixed height for mobile nav */
-  backdrop-filter: blur(8px);
 }
 
 .mobile-nav-item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-item svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-item span {
+  font-size: 0.75rem;
   transition: all 0.3s ease;
 }
 
@@ -579,18 +599,66 @@ body {
 
 .mobile-nav-item.active svg {
   transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(228, 57, 244, 0.5));
 }
 
-.mobile-nav-item:not(.active):hover {
-  color: #E439F4;
-  transform: translateY(-2px);
-}
-
-/* Add this media query for desktop */
-@media (min-width: 1024px) {
-  .footer-bg {
-    padding-bottom: 24px;
+/* Adjust content padding for mobile */
+@media (max-width: 767px) {
+  .modern-section {
+    padding-top: 5rem;
+    padding-bottom: 7rem; /* Extra padding to account for mobile nav */
   }
+
+  .modern-card {
+    margin-bottom: 1rem;
+  }
+
+  .modern-card > div {
+    padding: 1.25rem;
+  }
+
+  /* Adjust grid layouts */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Adjust text sizes */
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Adjust container padding */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Ensure buttons are properly sized */
+  .modern-card.button > div {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* Add bottom margin to last section to account for mobile nav */
+section:last-of-type {
+  margin-bottom: 4rem;
 }
 
 /* Add these animation classes */
@@ -613,34 +681,61 @@ body {
   animation: slideDown 0.5s ease-out;
 }
 
-/* Update nav item styles - make them more explicit */
+/* Navigation styles - ultra production friendly */
 .nav-item {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
-  transition: color 0.3s ease;
-  padding-bottom: 2px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.nav-item::after {
+/* Base underline - always visible but transparent */
+.nav-item::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
-  background: #E439F4; /* Use direct color instead of var() */
-  transition: width 0.3s ease;
-  transform-origin: left;
+  background: #E439F4;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(228, 57, 244, 0.5);
 }
 
-.nav-item:hover,
-.nav-item.active {
+/* Hover state */
+.nav-item:hover {
   color: #E439F4;
 }
 
-.nav-item:hover::after,
-.nav-item.active::after {
-  width: 100%;
+.nav-item:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Active state with !important for production */
+.nav-item.active {
+  color: #E439F4 !important;
+}
+
+.nav-item.active::before {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+}
+
+/* Force active state in production */
+[class*="active"] .nav-item,
+.active.nav-item {
+  color: #E439F4 !important;
+}
+
+[class*="active"] .nav-item::before,
+.active.nav-item::before {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
 }
 
 html {
@@ -944,4 +1039,107 @@ html, body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .modern-card > div {
+    padding: 2rem; /* Larger padding on desktop */
+  }
+}
+
+/* Mobile-specific card adjustments */
+@media (max-width: 767px) {
+  .modern-card {
+    width: 100%;
+  }
+  
+  /* Adjust grid layouts for mobile */
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Adjust text sizes for mobile */
+  .text-4xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  /* Adjust section padding for mobile */
+  .modern-section {
+    padding: 4rem 0;
+  }
+  
+  /* Adjust container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Testimonial card styles */
+.testimonial-name {
+  color: rgb(7, 237, 248);
+  text-shadow: 0 0 10px rgba(7, 237, 248, 0.3);
+  transition: all 0.3s ease;
+}
+
+.testimonial-role {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.modern-card:hover .testimonial-name {
+  text-shadow: 0 0 15px rgba(7, 237, 248, 0.5);
+}
+
+/* Navigation styles - more production friendly */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover span {
+  color: #E439F4;
+}
+
+.nav-link:hover div::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.nav-link div {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link div::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #E439F4;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform-origin: left;
+  box-shadow: 0 0 10px rgba(228, 57, 244, 0.5);
+}
+
+/* Active state styles */
+.nav-link.active span {
+  color: #E439F4;
+}
+
+.nav-link.active div::after {
+  transform: scaleX(1);
+  opacity: 1;
 }
