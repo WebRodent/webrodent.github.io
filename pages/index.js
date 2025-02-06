@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { ArrowDown } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "../components/Layout/ScrollAnimationWrapper";
 import React, { useMemo } from "react";
@@ -17,6 +17,7 @@ const Home = () => {
   const [showMoreServices, setShowMoreServices] = useState([false, false, false, false]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeLink, setActiveLink] = useState("home");
+  const [showBubble, setShowBubble] = useState(false);
 
   // Move generateParticles and particles up here, before any conditionals
   const generateParticles = (count) => {
@@ -165,6 +166,69 @@ const Home = () => {
     }
   ];
 
+  // Add this array at the top of your component
+  const ratMessages = [
+    // Professional & Direct
+    "Trenger du en nettside?",
+    "La oss bygge noe kult sammen!",
+    "Skal vi ta en prat?",
+    "Vi kan hjelpe deg med IT!",
+    
+    // Quirky & Fun
+    "🧀 Ost er godt, kode er bedre!",
+    "Psst... vil du se noe kult?",
+    "En liten mus med store ideer!",
+    "Kode-rotta på vakt! 🐭",
+    
+    // Tech Humor
+    "404: Ost ikke funnet",
+    "while(sleeping === false) { code(); }",
+    "Git commit -m 'fikset alt... tror jeg'",
+    "{ margin: auto } løser alt!",
+    
+    // Playful Business
+    "Din IT-partner med hale!",
+    "La oss gjøre nettsiden din ost-resistant",
+    "Webrodent gnager på dine IT-problemer",
+    "Skal vi bygge noe MEGAbit-t?",
+    
+    // Strange but Charming
+    "Jeg drømmer i HTML",
+    "Bits, bytes, og litt ost på siden",
+    "Kode-ninja med værhår",
+    "Musepekeren er min beste venn",
+    
+    // Norwegian Tech Puns
+    "Har du hørt om cloud? Det er over alt!",
+    "Jeg er en full-stack-mus",
+    "Responsive design er min ost",
+    "Backend? Frontned? Jeg tar begge!",
+    
+    // Random Thoughts
+    "Tenk om internett var laget av ost...",
+    "Koden min er skarpere enn mine tenner",
+    "Jeg bytter bugs mot ost",
+    "Debugger profesjonelt siden 2020",
+    
+    // Call-to-Action with Twist
+    "Klikk her, jeg lover ikke å bite!",
+    "La oss gjøre nettet litt morsommere",
+    "Din nettside trenger litt gnager-magi",
+    "Skal vi lage noe OSome sammen?",
+    
+    // Tech Support Humor
+    "Har du prøvd å skru av og på osten?",
+    "sudo make me_a_sandwich",
+    "Jeg spiser bugs til frokost",
+    "Kodet med værhårene i været",
+    
+    // Seasonal/Time-based
+    "Koder mens du sover 🌙",
+    "En kode-rotte's dagbok",
+    "Nattskiftet er mitt favorittskift",
+    "Kaffedrevet webutvikling 24/7"
+  ];
+
   useEffect(() => {
     setIsLoading(false);
   }, []);
@@ -190,31 +254,7 @@ const Home = () => {
       
       <main className="relative z-10">
         {/* Hero Section */}
-        <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-4 modern-section">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center relative z-10 px-4 md:px-0"
-          >
-            <h1 className="text-4xl md:text-7xl font-bold mb-6 glow-text">
-              Din Digitale Fremtid
-            </h1>
-            <p className="text-lg md:text-2xl text-white/90 mb-8 md:mb-12">
-              Vi leverer moderne løsninger for din bedrift.
-            </p>
-            <ScrollLink
-              to="products"
-              smooth
-              duration={500}
-              className="modern-card inline-flex items-center cursor-pointer group"
-            >
-              <div className="px-6 py-3 md:px-8 md:py-4">
-                <span className="text-base md:text-lg">Utforsk våre tjenester</span>
-              </div>
-            </ScrollLink>
-          </motion.div>
-
+        <section id="hero" className="relative min-h-screen flex items-center">
           {/* Animated background elements */}
           <div className="absolute inset-0 overflow-hidden">
             {[...Array(3)].map((_, i) => (
@@ -231,6 +271,106 @@ const Home = () => {
               />
             ))}
           </div>
+          
+          <div className="container mx-auto px-4 pt-20 pb-32">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left content */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative z-10"
+              >
+                <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                  <span className="text-white leading-tight">Din </span>
+                  <span className="text-accent-secondary">Digitale </span>
+                  <span className="text-accent-primary">Fremtid</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed">
+                  Vi leverer moderne løsninger for din bedrift
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a href="#tjenester" className="hero-button primary">
+                    Utforsk våre tjenester
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                  <a href="#contact" className="hero-button secondary">
+                    Ta kontakt
+                  </a>
+                </div>
+              </motion.div>
+
+              {/* Right content - Tech illustration */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative hidden lg:block"
+              >
+                <div className="relative">
+                  <div className="hero-tech-circle"></div>
+                  <img
+                    src="/assets/hero2.gif"
+                    alt="Tech Illustration"
+                    className="relative z-10 w-full h-auto rounded-3xl"
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Updated Cutie Rat Character */}
+          <motion.div
+            initial={{ x: "calc(100% + 120px)" }}
+            animate={{ x: "calc(100% - 20px)" }}
+            whileHover={{ x: "calc(100% - 140px)" }}
+            transition={{ 
+              type: "spring",
+              stiffness: 400,
+              damping: 25
+            }}
+            className="fixed right-0 bottom-20 z-50"
+          >
+            {/* Added hit area wrapper */}
+            <div 
+              className="rat-trigger-area"
+              onMouseEnter={() => setShowBubble(true)}
+              onMouseLeave={() => setShowBubble(false)}
+            >
+              <div className="relative group">
+                <motion.img 
+                  src="/assets/rats/cutie_rat.png" 
+                  alt="Cutie Rat"
+                  className="w-32 h-auto cutie-rat"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <AnimatePresence>
+                  {showBubble && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 500,
+                        damping: 25
+                      }}
+                      className="absolute -top-24 -left-32 speech-bubble"
+                    >
+                      <RandomMessage messages={ratMessages} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* Products Section */}
@@ -287,7 +427,7 @@ const Home = () => {
                             className="mr-3"
                             style={{ color: 'var(--accent-secondary)' }}
                           >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                           </motion.div>
@@ -406,7 +546,7 @@ const Home = () => {
                         <div className="p-6">
                           <div className="flex items-center space-x-3 mb-4">
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                               </svg>
                             </div>
@@ -419,7 +559,7 @@ const Home = () => {
                         <div className="p-6">
                           <div className="flex items-center space-x-3 mb-4">
                             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-accent-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                             </div>
@@ -452,8 +592,9 @@ const Home = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="modern-section">
+        <section id="contact" className="modern-section relative overflow-hidden">
           <div className="container mx-auto px-4">
+            {/* Title */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -468,52 +609,68 @@ const Home = () => {
               </p>
             </motion.div>
 
+            {/* Content Grid */}
             <div className="grid lg:grid-cols-2 gap-12">
+              {/* Left Column - Contact Info */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
-                className="space-y-8"
               >
-                <div className="modern-card">
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-6 text-accent-secondary">
-                      La oss snakke sammen
-                    </h3>
-                    <p className="text-white/70 mb-8">
-                      Vi er her for å hjelpe deg med å ta din bedrift til neste nivå. Send oss en melding, så tar vi kontakt!
-                    </p>
-                    <div className="space-y-4">
-                      <a href="mailto:post@webrodent.com" className="contact-link">
-                        <div className="flex items-center space-x-3 text-accent-primary hover:text-accent-secondary transition-colors">
-                          <span className="text-lg">post@webrodent.com</span>
+                <div className="contact-card p-8 md:p-12">
+                  <h3 className="text-3xl font-bold mb-8 text-accent-secondary glow-text-subtle">
+                    La oss snakke sammen
+                  </h3>
+                  <p className="text-lg text-white/80 mb-12 leading-relaxed">
+                    Vi er her for å hjelpe deg med å ta din bedrift til neste nivå. 
+                    Send oss en melding, så tar vi kontakt!
+                  </p>
+                  
+                  {/* Contact Links */}
+                  <div className="space-y-6">
+                    <a href="mailto:post@webrodent.com" className="contact-link-card group">
+                      <div className="contact-link-content">
+                        <div className="icon-container">
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
                         </div>
-                      </a>
-                      <a href="https://github.com/webrodent" target="_blank" rel="noopener noreferrer" className="contact-link">
-                        <div className="flex items-center space-x-3 text-accent-primary hover:text-accent-secondary transition-colors">
-                          <span className="text-lg">GitHub</span>
+                        <span className="text-lg">post@webrodent.com</span>
+                      </div>
+                    </a>
+                    
+                    <a href="https://github.com/webrodent" target="_blank" rel="noopener noreferrer" 
+                      className="contact-link-card group"
+                    >
+                      <div className="contact-link-content">
+                        <div className="icon-container">
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-.446-.446-0.446-0.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                          </svg>
                         </div>
-                      </a>
-                    </div>
+                        <span className="text-lg">GitHub</span>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </motion.div>
 
+              {/* Right Column - Image */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="modern-card p-12 hover-lift h-full flex items-center justify-center">
+                <div className="contact-image-card">
                   <div className="relative w-full aspect-[16/9]">
                     <img
-                      src="assets/head_tag_image.png"
+                      src="assets/rats/rat_purple_wave.png"
                       alt="Webrodent Contact"
                       className="w-full h-full object-cover rounded-[22px]"
                     />
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-t from-bg-deep via-transparent to-transparent opacity-50 rounded-[22px]"
-                    ></div>
+                    <div className="image-overlay"></div>
+                    <div className="tech-pattern"></div>
                   </div>
                 </div>
               </motion.div>
@@ -523,6 +680,18 @@ const Home = () => {
       </main>
     </div>
   );
+};
+
+// Add this component for random messages
+const RandomMessage = ({ messages }) => {
+  const [message, setMessage] = useState(messages[0]);
+  
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    setMessage(messages[randomIndex]);
+  }, [messages]);
+
+  return <p className="text-sm font-medium text-bg-deep">{message}</p>;
 };
 
 export default Home;
