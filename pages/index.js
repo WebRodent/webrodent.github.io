@@ -77,7 +77,7 @@ const Home = () => {
             <circle fill="#ffffff" cx="521.221" cy="168.237" r="50.682"></circle>
             <path fill="#ffffff" d="M691.019,1349.104c4.712,2.503,9.771,3.687,14.76,3.687c11.293,0,22.218-6.085,27.884-16.753l362.28-682.476c8.166-15.385,2.314-34.475-13.066-42.64c-15.385-8.166-34.474-2.31-42.639,13.067l-362.291,682.476C669.782,1321.85,675.634,1340.939,691.019,1349.104z"></path>
             <path fill="#ffffff" d="M281.378,967.035c0.018,0.29,0.062,0.576,0.083,0.871c0.181,2.38,0.647,4.765,1.395,7.114c0.105,0.325,0.184,0.659,0.299,0.984c0.136,0.388,0.317,0.771,0.471,1.153c0.233,0.599,0.466,1.193,0.739,1.773c0.021,0.048,0.04,0.102,0.066,0.153c0.057,0.124,0.141,0.229,0.202,0.353c0.537,1.091,1.144,2.143,1.804,3.162c0.176,0.282,0.352,0.561,0.542,0.832c0.743,1.078,1.544,2.12,2.424,3.103c0.163,0.18,0.338,0.339,0.501,0.514c0.739,0.788,1.526,1.541,2.354,2.254c0.303,0.259,0.603,0.515,0.911,0.765c0.858,0.688,1.75,1.333,2.692,1.936c0.176,0.115,0.344,0.247,0.524,0.356c0.928,0.567,1.888,1.091,2.891,1.57l315.32,150.776c4.391,2.098,9.019,3.092,13.581,3.092c11.769,0,23.058-6.616,28.469-17.941c7.515-15.71,0.871-34.54-14.844-42.055L385.988,965.481l255.813-122.323c15.715-7.514,22.359-26.344,14.844-42.055c-7.51-15.714-26.344-22.367-42.05-14.848L299.592,936.882c-0.009,0.004-0.018,0.004-0.022,0.008l-0.295,0.141c-0.264,0.128-0.501,0.282-0.761,0.414c-0.633,0.321-1.263,0.646-1.874,1.016c-0.356,0.212-0.69,0.449-1.038,0.678c-0.515,0.335-1.034,0.674-1.536,1.042c-0.37,0.274-0.712,0.573-1.074,0.859c-0.44,0.36-0.879,0.712-1.307,1.1c-0.356,0.325-0.695,0.673-1.033,1.012c-0.388,0.383-0.774,0.761-1.145,1.166c-0.343,0.383-0.66,0.779-0.981,1.175c-0.33,0.396-0.66,0.787-0.968,1.205c-0.334,0.453-0.638,0.919-0.946,1.391c-0.255,0.392-0.528,0.774-0.77,1.179c-0.331,0.55-0.621,1.117-0.911,1.681c-0.167,0.317-0.352,0.607-0.501,0.928c-0.026,0.054-0.044,0.103-0.066,0.154c-0.273,0.581-0.506,1.175-0.739,1.769c-0.154,0.388-0.335,0.77-0.471,1.157c-0.115,0.325-0.194,0.66-0.299,0.99c-0.748,2.345-1.214,4.729-1.395,7.109c-0.022,0.291-0.066,0.581-0.083,0.872c-0.027,0.518-0.005,1.037-0.005,1.556C281.373,965.997,281.351,966.512,281.378,967.035z"></path>
-            <path fill="#ffffff" d="M1117.246,1129.855c5.411,11.325,16.705,17.941,28.474,17.941c4.558,0,9.19-0.994,13.576-3.092l315.321-150.776c1.003-0.479,1.967-1.003,2.89-1.57c0.181-0.109,0.349-0.241,0.523-0.356c0.942-0.603,1.839-1.248,2.692-1.936c0.313-0.25,0.612-0.506,0.916-0.765c0.826-0.713,1.61-1.466,2.35-2.254c0.166-0.175,0.343-0.334,0.501-0.514c0.88-0.982,1.681-2.024,2.429-3.103c0.184-0.271,0.361-0.55,0.54-0.832c0.661-1.02,1.268-2.071,1.805-3.162c0.063-0.124,0.145-0.229,0.202-0.353c0.022-0.052,0.039-0.105,0.065-0.153c0.274-0.58,0.503-1.175,0.74-1.773c0.153-0.383,0.334-0.766,0.47-1.153c0.115-0.325,0.193-0.659,0.301-0.984c0.746-2.35,1.209-4.734,1.393-7.114c0.022-0.295,0.066-0.581,0.081-0.871c0.026-0.523,0.008-1.038,0.008-1.554c0-0.519,0.019-1.038-0.008-1.556c-0.015-0.291-0.059-0.581-0.081-0.872c-0.184-2.381-0.646-4.765-1.393-7.109c-0.107-0.33-0.186-0.665-0.301-0.99c-0.136-0.388-0.316-0.77-0.47-1.157c-0.237-0.594-0.466-1.188-0.74-1.769c-0.026-0.052-0.043-0.101-0.065-0.154c-0.154-0.32-0.34-0.616-0.506-0.928c-0.291-0.567-0.58-1.131-0.906-1.681c-0.246-0.408-0.52-0.802-0.783-1.197c-0.304-0.457-0.599-0.923-0.933-1.368c-0.316-0.427-0.655-0.831-0.994-1.236c-0.308-0.383-0.616-0.77-0.95-1.135c-0.383-0.427-0.787-0.822-1.192-1.224c-0.321-0.319-0.638-0.646-0.973-0.954c-0.458-0.413-0.938-0.796-1.417-1.183c-0.315-0.256-0.624-0.523-0.954-0.767c-0.559-0.418-1.14-0.795-1.72-1.174c-0.281-0.181-0.555-0.375-0.841-0.546c-0.712-0.431-1.447-0.818-2.195-1.192c-0.167-0.079-0.316-0.18-0.483-0.26l-0.186-0.088c-0.062-0.03-0.132-0.065-0.197-0.097l-314.938-150.59c-15.696-7.51-34.536-0.863-42.05,14.848c-7.515,15.711-0.867,34.541,14.844,42.055l255.817,122.323l-255.817,122.319C1116.379,1095.315,1109.731,1114.146,1117.246,1129.855z"></path>
+            <path fill="#ffffff" d="M1117.246,1129.855c5.411,11.325,16.705,17.941,28.474,17.941c4.558,0,9.19-0.994,13.576-3.092l315.321-150.776c1.003-0.479,1.967-1.003,2.89-1.57c0.181-0.109,0.349-0.241,0.523-0.356c0.942-0.603,1.839-1.248,2.692-1.936c0.313-0.25,0.612-0.506,0.916-0.765c0.826-0.713,1.61-1.466,2.35-2.254c0.166-0.175,0.343-0.334,0.501-0.514c0.88-0.982,1.681-2.024,2.429-3.103c0.184-0.271,0.361-0.55,0.54-0.832c0.661-1.02,1.268-2.071,1.805-3.162c0.063-0.124,0.145-0.229,0.202-0.353c0.022-0.052,0.039-0.105,0.065-0.153c0.274-0.58,0.506-1.175,0.74-1.773c0.154-0.383,0.334-0.766,0.47-1.153c0.115-0.325,0.193-0.659,0.301-0.984c0.746-2.35,1.209-4.734,1.393-7.114c0.022-0.295,0.066-0.581,0.081-0.871c0.026-0.523,0.008-1.038,0.008-1.554c0-0.519,0.019-1.038-0.008-1.556c-0.015-0.291-0.059-0.581-0.081-0.872c-0.184-2.381-0.646-4.765-1.393-7.109c-0.107-0.33-0.186-0.665-0.301-0.99c-0.136-0.388-0.316-0.77-0.47-1.157c-0.237-0.594-0.466-1.188-0.74-1.769c-0.026-0.052-0.043-0.101-0.065-0.154c-0.154-0.32-0.34-0.616-0.506-0.928c-0.291-0.567-0.58-1.131-0.906-1.681c-0.246-0.408-0.52-0.802-0.783-1.197c-0.304-0.457-0.599-0.923-0.933-1.368c-0.316-0.427-0.655-0.831-0.994-1.236c-0.308-0.383-0.616-0.77-0.95-1.135c-0.383-0.427-0.787-0.822-1.192-1.224c-0.321-0.319-0.638-0.646-0.973-0.954c-0.458-0.413-0.938-0.796-1.417-1.183c-0.315-0.256-0.624-0.523-0.954-0.767c-0.559-0.418-1.14-0.795-1.72-1.174c-0.281-0.181-0.555-0.375-0.841-0.546c-0.712-0.431-1.447-0.818-2.195-1.192c-0.167-0.079-0.316-0.18-0.483-0.26l-0.186-0.088c-0.062-0.03-0.132-0.065-0.197-0.097l-314.938-150.59c-15.696-7.51-34.536-0.863-42.05,14.848c-7.515,15.711-0.867,34.541,14.844,42.055l255.817,122.323l-255.817,122.319C1116.379,1095.315,1109.731,1114.146,1117.246,1129.855z"></path>
           </g>
         </svg>
       )
@@ -143,23 +143,25 @@ const Home = () => {
     },
   ];
 
-  // Add these testimonials data
-  const testimonials = [
+  // Replace the testimonials array and section with this new customers section
+  const customers = [
     {
-      name: "Brakstad",
-      role: "Pigeon Vitality, Eier",
-      image: "https://readymadeui.com/profile_2.webp",
-      content: "Duene vinner nå alle konkurranser takket være WebRodent."
+      name: "Pigeon Vitality",
+      logo: "assets/pgv.png",
+      mission: "Kartlegging av IT-infrastruktur og digital strategi",
+      nettside: "https://www.pigeonvitality.com/"
     },
     {
-      name: "Mads William Lia",
-      role: "Aicono, Daglig Leder",
-      content: "ARO-tjenesten til WebRodent har effektivisert vår årlige innsamling av Aksjonærregisteroppgaven for alle våre kunder. Denne tjenesten bruker vi om igjen!"
+      name: "Aicono",
+      logo: "assets/aicono_negativ.png",
+      mission: "IT tjeneste leverandør",
+      nettside: "https://www.aicono.no/"
     },
     {
-      name: "Simon Konecki",
-      role: "Founder of Labar",
-      content: "The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt."
+      name: "One Accounting",
+      logo: "assets/oneaccounting-logo.png",
+      mission: "IT tjeneste leverandør",
+      nettside: "https://www.oneaccounting.no/"
     }
   ];
 
@@ -300,8 +302,8 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section id="omtale" className="modern-section">
+        {/* Customers Section */}
+        <section id="kunder" className="modern-section">
           <div className="container mx-auto px-4">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -310,44 +312,61 @@ const Home = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
-                Hva våre kunder sier
+                Våre Kunder
               </h2>
               <p className="text-xl text-white/80">
-                Tilbakemeldinger fra våre fornøyde kunder
+                Vi er stolte av å samarbeide med disse selskapene
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
+            <div className="customer-grid">
+              {customers.map((customer, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  className="modern-card float-element"
+                  viewport={{ once: true }}
+                  className="customer-item"
                 >
-                  <div className="p-8">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#07EDF8] shadow-[0_0_10px_rgba(7,237,248,0.3)]">
-                        <img 
-                          src={testimonial.image || `https://api.dicebear.com/6.x/initials/svg?seed=${testimonial.name}`} 
-                          alt={testimonial.name} 
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="testimonial-name font-semibold">{testimonial.name}</p>
-                        <p className="testimonial-role">{testimonial.role}</p>
+                  <a 
+                    href={customer.nettside} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="customer-link group"
+                  >
+                    <div className="customer-logo">
+                      <img 
+                        src={customer.logo}
+                        alt={customer.name}
+                        className="logo-image"
+                      />
+                    </div>
+                    <div className="customer-info">
+                      <h3 className="customer-name">
+                        {customer.name}
+                      </h3>
+                      <p className="customer-mission">
+                        {customer.mission}
+                      </p>
+                      <div className="visit-link">
+                        <span>Besøk nettside</span>
+                        <svg 
+                          className="link-arrow" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                          />
+                        </svg>
                       </div>
                     </div>
-                    <div className="relative">
-                      <svg className="absolute -top-4 -left-2 w-8 h-8 text-[var(--accent-primary)] opacity-30" fill="currentColor" viewBox="0 0 32 32">
-                        <path d="M10 8c-2.2 0-4 1.8-4 4v12h6v-12h-4c0-1.1 0.9-2 2-2v-2zm14 0c-2.2 0-4 1.8-4 4v12h6v-12h-4c0-1.1 0.9-2 2-2v-2z"/>
-                      </svg>
-                      <p className="text-white/80 italic leading-relaxed">"{testimonial.content}"</p>
-                    </div>
-                  </div>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -367,7 +386,7 @@ const Home = () => {
               <p className="text-xl text-white/80">Erfaring møter innovasjon</p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -419,13 +438,13 @@ const Home = () => {
                 transition={{ duration: 0.4 }}
                 className="relative"
               >
-                <div className="modern-card p-1">
+                <div className="modern-card p-1 aspect-[16/9]">
                   <img
-                    src="assets/hero.gif"
+                    src="assets/hero2.gif"
                     alt="About Webrodent"
                     className="w-full h-full object-cover rounded-[22px]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-deep)] via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-deep)] via-transparent to-transparent rounded-[22px]"></div>
                 </div>
               </motion.div>
             </div>
@@ -441,8 +460,12 @@ const Home = () => {
               transition={{ duration: 0.4 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">Kontakt Oss</h2>
-              <p className="text-xl text-white/80">Ta kontakt for en uforpliktende prat</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 glow-text">
+                Kontakt Oss
+              </h2>
+              <p className="text-xl text-white/80">
+                Ta kontakt for en uforpliktende prat
+              </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
@@ -454,74 +477,22 @@ const Home = () => {
               >
                 <div className="modern-card">
                   <div className="p-8">
-                    <h3 className="text-3xl font-bold mb-6 accent-line inline-block">
+                    <h3 className="text-2xl font-bold mb-6 text-accent-secondary">
                       La oss snakke sammen
                     </h3>
-                    <p className="text-white/80 mb-8 text-lg leading-relaxed">
-                      Vi er her for å hjelpe deg med å ta din bedrift til neste nivå. 
-                      Send oss en melding, så tar vi kontakt!
+                    <p className="text-white/70 mb-8">
+                      Vi er her for å hjelpe deg med å ta din bedrift til neste nivå. Send oss en melding, så tar vi kontakt!
                     </p>
-                    <motion.a 
-                      href="mailto:post@webrodent.com"
-                      className="modern-card inline-flex items-center group"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <div className="px-8 py-4 text-lg font-medium hover:text-[var(--accent-secondary)]">
-                        <span>Send oss en e-post</span>
-                        <svg 
-                          className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 inline" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </div>
-                    </motion.a>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="modern-card">
-                    <div className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
+                    <div className="space-y-4">
+                      <a href="mailto:post@webrodent.com" className="contact-link">
+                        <div className="flex items-center space-x-3 text-accent-primary hover:text-accent-secondary transition-colors">
+                          <span className="text-lg">post@webrodent.com</span>
                         </div>
-                        <h4 className="text-xl font-bold text-white">E-post</h4>
-                      </div>
-                      <a 
-                        href="mailto:post@webrodent.com" 
-                        className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300"
-                      >
-                        post@webrodent.com
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="modern-card">
-                    <div className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-secondary)] flex items-center justify-center">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                          </svg>
+                      <a href="https://github.com/webrodent" target="_blank" rel="noopener noreferrer" className="contact-link">
+                        <div className="flex items-center space-x-3 text-accent-primary hover:text-accent-secondary transition-colors">
+                          <span className="text-lg">GitHub</span>
                         </div>
-                        <h4 className="text-xl font-bold text-white">Følg oss</h4>
-                      </div>
-                      <a 
-                        href="https://github.com/WebRodent" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-[var(--accent-secondary)] hover:text-[var(--accent-primary)] transition-colors duration-300 flex items-center space-x-2"
-                      >
-                        <span>GitHub</span>
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495 0 .108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
-                        </svg>
                       </a>
                     </div>
                   </div>
@@ -532,16 +503,17 @@ const Home = () => {
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
-                className="relative"
               >
                 <div className="modern-card p-12 hover-lift h-full flex items-center justify-center">
-                  <div className="relative w-full aspect-square">
+                  <div className="relative w-full aspect-[16/9]">
                     <img
-                      src="assets/wr_logo_black.png"
+                      src="assets/head_tag_image.png"
                       alt="Webrodent Contact"
-                      className="w-full h-full object-contain invert opacity-70 hover:opacity-90 transition-opacity duration-300"
+                      className="w-full h-full object-cover rounded-[22px]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-deep)] via-transparent to-transparent opacity-50"></div>
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-t from-bg-deep via-transparent to-transparent opacity-50 rounded-[22px]"
+                    ></div>
                   </div>
                 </div>
               </motion.div>

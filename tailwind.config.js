@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    "./pages/**/*.js",
-    "./components/**/*.js",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     boxShadow: {
@@ -18,8 +18,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        'background-start': '#1a1a30',
-        'background-end': '#010124',
+        'accent-primary': '#E439F4',
+        'accent-secondary': '#07EDF8',
+        'bg-deep': '#010124',
+        'bg-mid': '#1A1A30',
         'gradient-dark': '#04233d',
         'gradient-darker': '#05132b',
         'accent-purple': '#65334D',
