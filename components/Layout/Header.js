@@ -1,72 +1,85 @@
-import React, { useState, useEffect } from "react";
-// Import react scroll
-import { Link as LinkScroll } from "react-scroll";
+import React, { useState, useEffect, useCallback } from "react";
+import { animateScroll, scroller } from "react-scroll";
 
 const Header = () => {
-  const [activeLink, setActiveLink] = useState("hero");
-  const [scrollActive, setScrollActive] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollActive(window.scrollY > 20);
-      
-      // Get all sections and their positions
-      const sections = ["hero", "products", "omtale", "about", "contact"];
-      const scrollPosition = window.scrollY + (window.innerHeight / 3);
+  const navigationItems = [
+    { id: "hero", name: "Hjem" },
+    { id: "products", name: "Produkter" },
+    { id: "kunder", name: "Kunder" },
+    { id: "about", name: "Om Oss" },
+    { id: "contact", name: "Kontakt" }
+  ];
 
-      // Find current section with more precise calculations
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const top = window.scrollY + rect.top;
-          const height = rect.height;
-          
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            if (activeLink !== section) {
-              setActiveLink(section);
-              // Force active state update
-              document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === `#${section}`) {
-                  item.classList.add('active');
-                }
-              });
-            }
-            break;
-          }
+  // Improved section detection
+  const detectSection = useCallback(() => {
+    if (isScrolling) return;
+
+    const viewportMid = window.scrollY + window.innerHeight / 2;
+    let currentSection = navigationItems[0].id;
+    let minDistance = Infinity;
+
+    navigationItems.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const sectionMid = window.scrollY + rect.top + rect.height / 2;
+        const distance = Math.abs(viewportMid - sectionMid);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentSection = id;
         }
       }
+    });
+
+    setActiveSection(currentSection);
+  }, [isScrolling]);
+
+  // Scroll handler with debounce
+  useEffect(() => {
+    let scrollTimeout;
+
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(detectSection, 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [activeLink]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    detectSection(); // Initial detection
 
-  // Update the navigation items for both desktop and mobile
-  const navigationItems = [
-    { id: "hero", name: "Hjem", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
-    { id: "products", name: "Produkter", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
-    { id: "kunder", name: "Kunder", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
-    { id: "about", name: "Om Oss", icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" },
-    { id: "contact", name: "Kontakt", icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" }
-  ];
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [detectSection]);
 
-  const navigation = [
-    { name: 'Hjem', href: 'hero' },  // Change from 'home' to 'hero'
-    { name: 'Produkter', href: 'products' },
-    { name: 'Kunder', href: 'kunder' },
-    { name: 'Om Oss', href: 'about' },
-    { name: 'Kontakt', href: 'contact' }
-  ];
+  // Smooth scroll handler
+  const scrollToSection = (sectionId) => {
+    setIsScrolling(true);
+    setActiveSection(sectionId); // Immediate feedback
+
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+
+    const headerOffset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+
+    // Reset scrolling state after animation
+    setTimeout(() => setIsScrolling(false), 1000);
+  };
 
   return (
-    <header className={`fixed top-0 w-full z-30 transition-all header-bg${
-      scrollActive ? " shadow-md pt-0" : " pt-4"
-    }`}>
+    <header className="fixed top-0 w-full transition-all header-bg z-[1000]">
       <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
-        {/* Logo section */}
         <div className="col-start-1 col-end-2 flex items-center">
           <img
             src="assets/Rodent_Web_logo.png"
@@ -78,22 +91,18 @@ const Header = () => {
           </h1>     
         </div>
         
-        {/* Navigation items */}
-        <ul className="hidden lg:flex col-start-4 col-end-8 text-white items-center">
+        <ul className="hidden lg:flex col-start-4 col-end-8 text-white items-center justify-end gap-8">
           {navigationItems.map((item) => (
-            <LinkScroll
-              key={item.id}
-              activeClass="active"
-              to={item.id}
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              className={`nav-item${activeLink === item.id ? " active" : ""}`}
-              onSetActive={() => setActiveLink(item.id)}
-            >
-              {item.name}
-            </LinkScroll>
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 cursor-pointer nav-item ${
+                  activeSection === item.id ? "active" : ""
+                }`}
+              >
+                {item.name}
+              </button>
+            </li>
           ))}
         </ul>
       </nav>

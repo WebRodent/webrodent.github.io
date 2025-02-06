@@ -96,7 +96,7 @@
   position: fixed;
   inset: 0;
   background: #010124;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -139,7 +139,9 @@
 /* Modern section styling */
 .modern-section {
   position: relative;
-  padding: 8rem 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   background: linear-gradient(
     180deg,
@@ -147,8 +149,25 @@
     rgba(4, 35, 61, 0.8) 50%,
     var(--bg-deep) 100%
   );
+  z-index: 1;
 }
 
+/* Keep the container padding */
+.modern-section > .container {
+  width: 100%;
+  padding-top: clamp(2rem, 5vh, 4rem);
+  padding-bottom: clamp(2rem, 5vh, 4rem);
+}
+
+/* Add responsive adjustments */
+@media (max-width: 767px) {
+  .modern-section {
+    min-height: 100vh;
+    height: auto;
+  }
+}
+
+/* Container adjustments */
 .modern-section::before {
   content: '';
   position: absolute;
@@ -330,6 +349,9 @@ body {
   color: white;
   min-height: 100vh;
   background: var(--bg-deep);
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: none;
 }
 
 #__next {
@@ -340,10 +362,10 @@ body {
 
 /* Header background with slight opacity */
 .header-bg {
-  background: rgba(1, 1, 36, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease-in-out;
+  @apply bg-opacity-80 backdrop-blur-md;
+  background-color: rgba(1, 1, 36, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1000;
 }
 
 .header-bg.scrolled {
@@ -649,49 +671,34 @@ section:last-of-type {
   animation: slideDown 0.5s ease-out;
 }
 
-/* Navigation styles - ultra production friendly */
+/* Navigation styles */
 .nav-item {
   position: relative;
   color: rgba(255, 255, 255, 0.7);
-  padding: 0.5rem 1rem;
   transition: all 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
 }
 
-/* Base underline - always visible but transparent */
-.nav-item::before {
+.nav-item::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
   background: #E439F4;
-  opacity: 0;
   transform: scaleX(0);
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(228, 57, 244, 0.5);
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
 
-/* Hover state */
-.nav-item:hover {
+.nav-item:hover,
+.nav-item.active {
   color: #E439F4;
 }
 
-.nav-item:hover::before {
-  opacity: 1;
+.nav-item:hover::after,
+.nav-item.active::after {
   transform: scaleX(1);
-}
-
-/* Active state with !important for production */
-.nav-item.active {
-  color: #E439F4 !important;
-}
-
-.nav-item.active::before {
-  opacity: 1 !important;
-  transform: scaleX(1) !important;
 }
 
 /* Force active state in production */
@@ -700,8 +707,8 @@ section:last-of-type {
   color: #E439F4 !important;
 }
 
-[class*="active"] .nav-item::before,
-.active.nav-item::before {
+[class*="active"] .nav-item::after,
+.active.nav-item::after {
   opacity: 1 !important;
   transform: scaleX(1) !important;
 }
@@ -710,9 +717,10 @@ html {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scroll-behavior: smooth;
-  overflow-y: scroll; /* Maintain scroll functionality */
+  overflow-y: auto; /* Maintain scroll functionality */
   background: linear-gradient(90deg, var(--background-start), var(--background-end));
   min-height: 100%;
+  height: 100%;
 }
 
 html::-webkit-scrollbar {
@@ -1623,7 +1631,7 @@ html, body {
   transform-origin: bottom right;
   will-change: transform, opacity;
   pointer-events: none;
-  z-index: 60;
+  z-index: 98;
 }
 
 .speech-bubble::after {
@@ -1657,4 +1665,292 @@ html, body {
   margin: -40px;
   /* Make the hit area visible on hover for development */
   /* background: rgba(255, 0, 0, 0.1); */
+}
+
+/* Add scroll snapping to the main container */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: none;
+}
+
+/* Make each section snap */
+.modern-section {
+  position: relative;
+  height: 100vh; /* Changed from min-height for consistent snapping */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0; /* Remove default padding since we're using flex centering */
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--bg-deep) 0%,
+    rgba(4, 35, 61, 0.8) 50%,
+    var(--bg-deep) 100%
+  );
+}
+
+/* Add padding to the content instead */
+.modern-section > .container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Scroll snapping styles */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  height: 100%;
+  overflow-y: auto;
+  
+  @media (min-width: 768px) {
+    scroll-snap-type: none;
+    overflow-y: scroll;
+    
+    &.is-scrolling {
+      scroll-snap-type: none;
+    }
+  }
+}
+
+/* Prevent scroll during transitions */
+.scroll-disabled {
+  overflow: hidden;
+}
+
+/* Smooth scroll polyfill for better cross-browser support */
+@supports not (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Prevent scroll issues during transitions */
+.is-scrolling {
+  scroll-snap-type: none;
+}
+
+/* Ensure smooth scrolling with better performance */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+
+/* Update hero section styles */
+#hero {
+  position: relative;
+  isolation: isolate;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-deep) 0%,
+    transparent 20%,
+    transparent 80%,
+    var(--bg-deep) 100%
+  );
+  z-index: 2;
+}
+
+#hero img {
+  filter: brightness(0.8) saturate(1.2);
+  transform: scale(1.02); /* Slight scale to prevent white edges */
+}
+
+/* Update hero content styles */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Optional: Add a subtle animation to the background */
+@keyframes subtle-scale {
+  0%, 100% { transform: scale(1.02); }
+  50% { transform: scale(1.05); }
+}
+
+#hero img {
+  animation: subtle-scale 20s ease-in-out infinite;
+}
+
+/* Header styles - updated */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Much higher z-index to ensure it's above everything */
+  background: rgba(1, 1, 36, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Update z-index hierarchy */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-bg {
+  z-index: 0;
+}
+
+#hero {
+  position: relative;
+  isolation: isolate;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-deep) 0%,
+    transparent 20%,
+    transparent 80%,
+    var(--bg-deep) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Navigation items should be clickable */
+.nav-item {
+  position: relative;
+  z-index: 1001; /* Higher than header */
+  cursor: pointer;
+}
+
+/* Ensure mobile menu is above everything */
+.mobile-menu {
+  z-index: 1002;
+}
+
+/* Update other interactive elements */
+.cutie-rat-container {
+  z-index: 999;
+}
+
+.speech-bubble {
+  z-index: 998;
+}
+
+/* Remove any conflicting z-index values */
+.modern-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure header is actually clickable */
+header * {
+  position: relative;
+  z-index: 1001;
+}
+
+/* Add pointer events to make sure header is interactive */
+header {
+  pointer-events: auto;
+}
+
+/* Make sure content below header doesn't overlap */
+main {
+  padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* Ensure sections have proper IDs and spacing */
+section {
+  scroll-margin-top: 80px; /* Match header height */
+}
+
+/* Clean up and refine scroll and section styles */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Section styling */
+section {
+  min-height: 100vh;
+  position: relative;
+  scroll-margin-top: 80px;
+  z-index: 1;
+}
+
+/* Header and navigation styles */
+.header-bg {
+  background: rgba(1, 1, 36, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #E439F4;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: #E439F4;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  transform: scaleX(1);
+}
+
+/* Z-index hierarchy */
+.z-index-hierarchy {
+  --z-header: 1000;
+  --z-navigation: 1001;
+  --z-content: 1;
+  --z-background: 0;
+}
+
+/* Remove conflicting scroll snap styles */
+.snap-y,
+.snap-mandatory,
+.snap-start {
+  scroll-snap-type: none;
+  scroll-snap-align: none;
 }
