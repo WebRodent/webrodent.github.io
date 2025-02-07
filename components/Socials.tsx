@@ -18,7 +18,7 @@ interface SocialMetadata {
 
 const metadata: SocialMetadata = {
   title: 'WebRodent - Din Digitale Fremtid',
-  description: 'Vi styrker ditt digitale rede med innovative løsninger innen webutvikling, digital transformasjon og teknisk rådgivning.',
+  description: 'Hei, er dette ditt rede? 🐀',
   images: [
     {
       url: '/og/main.png', // Primary OG image
