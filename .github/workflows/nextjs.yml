@@ -38,29 +38,18 @@ jobs:
           cache: yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: yarn install
       - name: Set BASE_URL from CNAME
         id: base_url
-        run: echo "NEXT_PUBLIC_BASE_URL=$(cat CNAME)" >> $GITHUB_ENV
+        run: |
+          if [ -f CNAME ]; then
+            echo "NEXT_PUBLIC_BASE_URL=$(cat CNAME)" >> $GITHUB_ENV
+          else
+            echo "NEXT_PUBLIC_BASE_URL=${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}" >> $GITHUB_ENV
+          fi
       - name: Build with Next.js
-        run: yarn build
+        run: yarn build && touch out/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
