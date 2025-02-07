@@ -17,31 +17,31 @@ interface Product {
 
 const products: Product[] = [
   {
+    title: 'Styrket Digital Vekst',
+    description: 'Utvikling handler om mer enn kode. Vi mener at utvikling handler om forretning, strategi og teknisk kvalitet. Ved å kombinere disse tre elementene, kan vi hjelpe deg å oppnå ditt mål mer effektivt og permanent.',
+    listItems: ['Digital Strategi', 'Markedsbevist Utvikling', 'Tilpasset Produkter'],
+    gradientFrom: 'from-purple-500',
+    gradientTo: 'to-cyan-400',
+    icon: "./assets/consult.svg",
+    addedClass: "invert"
+  },
+  {
     title: 'ARO - Aksjonærregisteroppgaven',
     description: 'Automatiser og effektiviser innrapportering av Aksjonærregisteroppgaven med vår egenutviklede løsning.',
     listItems: ['Automatisk prosessering', 'Tidsbesparende', 'Kvalitetssikret'],
-    gradientFrom: 'from-purple-500',
-    gradientTo: 'to-cyan-400',
+    gradientFrom: 'from-cyan-400',
+    gradientTo: 'to-fuchsia-500',
     icon: "./assets/aro_colored.png"
   },
   {
     title: 'Skreddersydde Nettsider',
     description: 'Moderne og brukervennlige nettsider tilpasset din bedrifts behov og målgruppe.',
     listItems: ['Responsivt Design', 'SEO-Optimalisert', 'Skalerbare Løsninger'],
-    gradientFrom: 'from-cyan-400',
-    gradientTo: 'to-fuchsia-500',
+    gradientFrom: 'from-fuchsia-500',
+    gradientTo: 'to-purple-500',
     icon: "./assets/icon/website.svg",
     addedClass: "invert"
   },
-  {
-    title: 'Konsulenttjenester',
-    description: 'Strategisk rådgivning og teknisk ekspertise for din digitale transformasjon.',
-    listItems: ['Digital Strategi', 'Teknisk Rådgivning', 'Prosjektledelse'],
-    gradientFrom: 'from-fuchsia-500',
-    gradientTo: 'to-purple-500',
-    icon: "./assets/consult.svg",
-    addedClass: "invert"
-  }
 ]
 
 function ProductCard({ product }: { product: Product }) {
@@ -128,8 +128,8 @@ export default function ProductsSection() {
             variants={fadeInUp}
             className="text-center space-y-6"
           >
-            <h2 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500">
-              Våre Produkter
+            <h2 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]">
+              Vår Leveranse
             </h2>
             <p className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light">
               Skreddersydde løsninger for din bedrift

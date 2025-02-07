@@ -3,117 +3,99 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerChildren } from '../../utils/animations'
+import { fadeInUp } from '../../utils/animations'
 
-interface Customer {
-  name: string
-  logo: string
-  mission: string
-  website: string
-}
-
-const customers: Customer[] = [
+const customers = [
   {
-    name: "Pigeon Vitality",
-    logo: "./assets/pgv.png",
-    mission: "Kartlegging av IT-infrastruktur og digital strategi",
-    website: "https://www.pigeonvitality.com/"
+    name: 'Pigeon Vitality',
+    logo: './assets/customers/pigeon_vitality.png',
+    description: 'Kartlegging av IT-infrastruktur og digital strategi',
+    link: 'https://pigeonvitality.com'
   },
   {
-    name: "Aicono",
-    logo: "./assets/aicono_negativ.png",
-    mission: "IT tjeneste leverandør",
-    website: "https://www.aicono.no/"
+    name: 'Aicono',
+    logo: './assets/customers/aicono.png',
+    description: 'IT tjeneste leverandør',
+    link: 'https://aicono.no'
   },
   {
-    name: "One Accounting",
-    logo: "./assets/oneaccounting-logo.png",
-    mission: "IT tjeneste leverandør",
-    website: "https://www.oneaccounting.no/"
+    name: 'One Accounting',
+    logo: './assets/customers/one_accounting.png',
+    description: 'IT tjeneste leverandør',
+    link: 'https://oneaccounting.no'
   }
 ]
 
-function CustomerCard({ customer }: { customer: Customer }) {
+function CustomerCard({ customer }: { customer: typeof customers[0] }) {
   return (
-    <motion.div 
+    <motion.div
       variants={fadeInUp}
-      className="group bg-navy-800/30 p-6 sm:p-8 md:p-10 rounded-2xl hover:bg-navy-800/50 transition-all duration-300 backdrop-blur-sm"
+      className="relative group"
     >
-      <a 
-        href={customer.website} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="block"
-      >
-        <div className="relative h-16 sm:h-20 md:h-24 mb-6 md:mb-8">
-          <Image
-            src={customer.logo}
-            alt={customer.name}
-            fill
-            className="object-contain group-hover:scale-105 transition-transform"
-          />
-        </div>
-        <h3 className="text-xl sm:text-2xl font-bold text-center mb-3 md:mb-4">{customer.name}</h3>
-        <p className="text-gray-300 text-base sm:text-lg text-center mb-4 md:mb-6">{customer.mission}</p>
-        <motion.div 
-          className="flex items-center justify-center text-fuchsia-500 group-hover:text-fuchsia-400"
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400 }}
+      <div className="relative p-8 rounded-2xl bg-navy-900/80 backdrop-blur-sm border border-gray-800/50 hover:border-fuchsia-500/20 transition-colors duration-300">
+        <a 
+          href={customer.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
         >
-          <span className="text-lg mr-3">Besøk nettside</span>
-          <svg 
-            className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M14 5l7 7m0 0l-7 7m7-7H3" 
+          <div className="relative h-20 flex items-center justify-center">
+            {/* Pulsating glow effect */}
+            <div className="absolute inset-0 rounded-full bg-cyan-400/35 blur-2xl animate-glow-pulse" />
+            
+            <Image
+              src={customer.logo}
+              alt={customer.name}
+              width={200}
+              height={80}
+              className="object-contain max-h-20 relative"
+              priority
             />
-          </svg>
-        </motion.div>
-      </a>
+          </div>
+          <p className="text-center mt-4 text-sm text-gray-500 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 group-hover:[text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]">
+            {customer.description}
+          </p>
+        </a>
+      </div>
     </motion.div>
   )
 }
 
 export default function CustomersSection() {
   return (
-    <section id="kunder" className="relative py-32 px-4 md:px-8 lg:px-16 text-white" suppressHydrationWarning>
-      <div className="relative w-full max-w-[1400px] mx-auto">
+    <section id="kunder" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
+      <div className="max-w-[1400px] mx-auto">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: "-100px" }}
-          variants={staggerChildren}
-          className="space-y-20"
+          variants={{
+            initial: {},
+            animate: {
+              transition: {
+                staggerChildren: 0.1
+              }
+            }
+          }}
+          className="space-y-24"
         >
-          <div className="text-center space-y-6">
-            <motion.h2 
-              variants={fadeInUp}
-              className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
-            >
-              Våre Kunder
-            </motion.h2>
-            <motion.p 
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light"
-            >
-              Vi er stolte av å levere for våre kunder
-            </motion.p>
-          </div>
-          
           <motion.div 
-            className="grid md:grid-cols-3 gap-8 lg:gap-12"
-            variants={staggerChildren}
+            variants={fadeInUp}
+            className="text-center space-y-6"
           >
-            {customers.map((customer, index) => (
-              <CustomerCard key={index} customer={customer} />
-            ))}
+            <h2 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]">
+              Våre Kunder
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light">
+              Vi er stolte av å levere for våre kunder
+            </p>
           </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+            {customers.map((customer) => (
+              <CustomerCard key={customer.name} customer={customer} />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

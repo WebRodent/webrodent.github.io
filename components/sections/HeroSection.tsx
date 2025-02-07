@@ -41,7 +41,7 @@ export default function HeroSection() {
               className="text-lg sm:text-xl md:text-3xl text-gray-300 max-w-2xl"
               variants={fadeInUp}
             >
-              Vi leverer moderne løsninger for din bedrift
+              Vi styrker ditt digitale rede!
             </motion.p>
             <motion.div 
               className="flex flex-wrap gap-6"
