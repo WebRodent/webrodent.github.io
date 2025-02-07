@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import React from 'react'
 
 const ratMessages = [
   "Trenger du en nettside?",
@@ -45,7 +46,7 @@ export default function RatMascot() {
       >
         <div className="relative">
           <motion.img 
-            src="/assets/rats/cutie_rat.png" 
+            src="./assets/rats/cutie_rat.png" 
             alt="Mascot"
             className="w-32 h-auto"
             animate={{ y: [0, -10, 0] }}

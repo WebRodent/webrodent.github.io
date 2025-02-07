@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { fadeInUp, staggerChildren } from '@/utils/animations'
+import { fadeInUp, staggerChildren } from '../../utils/animations'
 
 interface Customer {
   name: string
@@ -15,19 +15,19 @@ interface Customer {
 const customers: Customer[] = [
   {
     name: "Pigeon Vitality",
-    logo: "/assets/pgv.png",
+    logo: "./assets/pgv.png",
     mission: "Kartlegging av IT-infrastruktur og digital strategi",
     website: "https://www.pigeonvitality.com/"
   },
   {
     name: "Aicono",
-    logo: "/assets/aicono_negativ.png",
+    logo: "./assets/aicono_negativ.png",
     mission: "IT tjeneste leverandør",
     website: "https://www.aicono.no/"
   },
   {
     name: "One Accounting",
-    logo: "/assets/oneaccounting-logo.png",
+    logo: "./assets/oneaccounting-logo.png",
     mission: "IT tjeneste leverandør",
     website: "https://www.oneaccounting.no/"
   }
@@ -37,7 +37,7 @@ function CustomerCard({ customer }: { customer: Customer }) {
   return (
     <motion.div 
       variants={fadeInUp}
-      className="group bg-navy-800/50 p-10 rounded-2xl hover:bg-navy-800 transition-all duration-300 backdrop-blur-sm"
+      className="group bg-navy-800/30 p-8 md:p-10 rounded-2xl hover:bg-navy-800/50 transition-all duration-300 backdrop-blur-sm"
     >
       <a 
         href={customer.website} 
@@ -83,12 +83,6 @@ function CustomerCard({ customer }: { customer: Customer }) {
 export default function CustomersSection() {
   return (
     <section id="kunder" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
-      {/* Background gradient effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[800px] h-[800px] bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-full blur-3xl top-1/4 -right-96" />
-        <div className="absolute w-[600px] h-[600px] bg-gradient-to-r from-cyan-400/10 to-fuchsia-500/10 rounded-full blur-3xl -bottom-32 -left-32" />
-      </div>
-
       <div className="relative w-full max-w-[1400px] mx-auto">
         <motion.div
           initial="initial"
@@ -100,15 +94,15 @@ export default function CustomersSection() {
           <div className="text-center space-y-6">
             <motion.h2 
               variants={fadeInUp}
-              className="text-5xl md:text-6xl font-bold"
+              className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
             >
               Våre Kunder
             </motion.h2>
             <motion.p 
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light"
             >
-              Vi er stolte av å samarbeide med disse selskapene
+              Vi er stolte av å levere for våre kunder
             </motion.p>
           </div>
           

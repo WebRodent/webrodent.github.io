@@ -4,27 +4,33 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { fadeInUp, slideIn, staggerChildren } from '@/utils/animations'
+import { fadeInUp, staggerChildren } from '../../utils/animations'
 
 export default function HeroSection() {
   return (
     <section id="hjem" className="relative min-h-screen flex items-center text-white">
-      {/* Background gradient effects */}
+      {/* Background Image Layer */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[800px] h-[800px] bg-gradient-to-r from-cyan-400/10 to-fuchsia-500/10 rounded-full blur-3xl top-1/4 -right-96" />
-        <div className="absolute w-[600px] h-[600px] bg-gradient-to-r from-purple-500/10 to-cyan-400/10 rounded-full blur-3xl -bottom-32 -left-32" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-[#070314]/80" />
+        <Image
+          src="./assets/rats/rat_purple_splash.png"
+          alt="Background"
+          fill
+          className="object-cover opacity-20 object-right-bottom"
+          priority
+        />
       </div>
 
-      <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 py-32">
+      <div className="relative w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-16 pt-20 pb-32">
         <div className="flex flex-col md:flex-row items-center justify-between gap-20">
           <motion.div 
-            className="md:w-1/2 space-y-10"
+            className="md:w-2/3 space-y-12 md:-mt-20"
             initial="initial"
             animate="animate"
             variants={staggerChildren}
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold leading-tight"
+              className="text-6xl md:text-8xl font-bold leading-tight [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
               variants={fadeInUp}
             >
               Din{' '}
@@ -54,23 +60,6 @@ export default function HeroSection() {
                 Ta kontakt
               </Link>
             </motion.div>
-          </motion.div>
-
-          <motion.div 
-            className="md:w-1/2"
-            variants={slideIn('right', 0.3)}
-            initial="initial"
-            animate="animate"
-          >
-            <div className="relative w-full aspect-square max-w-[700px] mx-auto">
-              <Image
-                src="/assets/rats/rat_purple_splash.png"
-                alt="Digital Transformation"
-                fill
-                className="object-contain scale-125"
-                priority
-              />
-            </div>
           </motion.div>
         </div>
       </div>

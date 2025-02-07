@@ -2,6 +2,8 @@ import React from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import BackgroundEffect from '@/components/BackgroundEffect'
+import SectionBackground from '@/components/SectionBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +20,8 @@ export default function RootLayout({
   return (
     <html lang="no">
       <body className={inter.className}>
+        <BackgroundEffect />
+        <SectionBackground />
         <Header />
         {children}
       </body>

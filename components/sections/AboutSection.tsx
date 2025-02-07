@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { fadeInUp, slideIn, staggerChildren } from '@/utils/animations'
+import { fadeInUp, slideIn, staggerChildren } from '../../utils/animations'
 
 interface FeatureCard {
   title: string
@@ -41,9 +41,9 @@ function FeatureCard({ feature }: { feature: FeatureCard }) {
   return (
     <motion.div 
       variants={fadeInUp}
-      className="bg-navy-800/50 p-8 rounded-2xl hover:bg-navy-800 transition-all duration-300 backdrop-blur-sm"
+      className="bg-navy-800/30 p-8 md:p-10 rounded-2xl hover:bg-navy-800/50 transition-all duration-300 backdrop-blur-sm"
     >
-      <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+      <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 hover:scale-110 transition-transform`}>
         {feature.icon}
       </div>
       <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
@@ -55,12 +55,6 @@ function FeatureCard({ feature }: { feature: FeatureCard }) {
 export default function AboutSection() {
   return (
     <section id="om-oss" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
-      {/* Background gradient effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[800px] h-[800px] bg-gradient-to-r from-purple-500/10 to-cyan-400/10 rounded-full blur-3xl top-1/4 -right-96" />
-        <div className="absolute w-[600px] h-[600px] bg-gradient-to-r from-cyan-400/10 to-fuchsia-500/10 rounded-full blur-3xl -bottom-32 -left-32" />
-      </div>
-
       <div className="relative w-full max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -73,23 +67,21 @@ export default function AboutSection() {
             <div className="space-y-6">
               <motion.h2 
                 variants={fadeInUp}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
               >
                 Om Oss
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl md:text-2xl text-gray-300"
+                className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light"
               >
-                Erfaring møter innovasjon
+                Innovasjon i kulissene
               </motion.p>
               <motion.p 
                 variants={fadeInUp}
                 className="text-lg text-gray-300 leading-relaxed"
               >
-                Vi er skjulte eksperter som leverer kvalitet i kulissene. Med et erfarent utviklingsmiljø 
-                leverer vi sømløse digitale løsninger som hjelper bedrifter å vokse og lykkes i den 
-                digitale verden.
+                Vi er innovative og jobber tett sammen med våre kunder for å levere tjenester som passer best etter deres behov. Vi tror på løsninger og tjenester som ikke bare effektiviserer, men som styrker brandingen til våre kunder
               </motion.p>
             </div>
 
@@ -111,18 +103,14 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="relative h-[600px] rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#070314_80%)] z-10" />
               <Image
-                src="/assets/hero2.gif"
+                src="./assets/hero4.gif"
                 alt="About Webrodent"
                 fill
                 className="object-cover"
               />
             </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-full blur-2xl opacity-20" />
-            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-purple-500 to-cyan-400 rounded-full blur-2xl opacity-20" />
           </motion.div>
         </div>
       </div>
