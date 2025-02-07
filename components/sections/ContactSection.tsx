@@ -54,7 +54,7 @@ function ContactCard({ link }: { link: ContactLink }) {
 
 export default function ContactSection() {
   return (
-    <section id="kontakt" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
+    <section id="kontakt" className="relative py-32 px-4 md:px-8 lg:px-16 text-white" suppressHydrationWarning>
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-[#070314]/80" />
         <Image

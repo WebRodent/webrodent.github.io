@@ -8,7 +8,7 @@ import { fadeInUp, staggerChildren } from '../../utils/animations'
 
 export default function HeroSection() {
   return (
-    <section id="hjem" className="relative min-h-screen flex items-center text-white">
+    <section id="hjem" className="relative min-h-screen flex items-center text-white" suppressHydrationWarning>
       {/* Background Image Layer */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-[#070314]/80" />

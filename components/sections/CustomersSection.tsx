@@ -82,7 +82,7 @@ function CustomerCard({ customer }: { customer: Customer }) {
 
 export default function CustomersSection() {
   return (
-    <section id="kunder" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
+    <section id="kunder" className="relative py-32 px-4 md:px-8 lg:px-16 text-white" suppressHydrationWarning>
       <div className="relative w-full max-w-[1400px] mx-auto">
         <motion.div
           initial="initial"

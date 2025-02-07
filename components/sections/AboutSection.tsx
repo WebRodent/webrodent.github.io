@@ -54,7 +54,7 @@ function FeatureCard({ feature }: { feature: FeatureCard }) {
 
 export default function AboutSection() {
   return (
-    <section id="om-oss" className="relative py-32 px-4 md:px-8 lg:px-16 text-white">
+    <section id="om-oss" className="relative py-32 px-4 md:px-8 lg:px-16 text-white" suppressHydrationWarning>
       <div className="relative w-full max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div

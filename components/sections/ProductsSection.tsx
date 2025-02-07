@@ -48,29 +48,29 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <motion.div 
       variants={fadeInUp}
-      className="group relative bg-navy-800/30 p-8 md:p-10 rounded-2xl hover:bg-navy-800/40 transition-all duration-300 backdrop-blur-sm border border-gray-800/50 hover:border-gray-700/80 hover:shadow-2xl hover:shadow-purple-500/20"
+      className="group relative bg-navy-800/30 p-8 md:p-10 rounded-2xl hover:bg-navy-800/40 transition-colors duration-200 backdrop-blur-sm border border-gray-800/50 hover:border-gray-700/80 will-change-transform"
     >
       {/* Gradient background effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-200"
         style={{
           backgroundImage: `linear-gradient(to right, ${product.gradientFrom.replace('from-', '')}, ${product.gradientTo.replace('to-', '')})`,
         }}
       />
 
       {/* Icon container */}
-      <div className="relative mb-8 group-hover:scale-105 transition-transform duration-300">
+      <div className="relative mb-8 transform group-hover:scale-105 transition-transform duration-200 will-change-transform">
         <div className={`w-20 h-20 rounded-xl bg-gradient-to-r ${product.gradientFrom} ${product.gradientTo} p-0.5`}>
-          <div className="w-full h-full bg-navy-900/90 rounded-[10px] flex items-center justify-center group-hover:bg-navy-900/70 transition-colors">
+          <div className="w-full h-full bg-navy-900/90 rounded-[10px] flex items-center justify-center group-hover:bg-navy-900/70 transition-colors duration-200">
             <Image
               src={product.icon}
               alt={product.title}
               width={32}
               height={32}
-              className={`w-8 h-8 transition-transform duration-300 ${product.addedClass || ''}`}
+              className={`w-8 h-8 transform transition-transform duration-200 ${product.addedClass || ''}`}
             />
           </div>
         </div>
-        <div className="absolute -inset-4 bg-gradient-to-r opacity-0 group-hover:opacity-40 blur-xl transition-all duration-300"
+        <div className="absolute -inset-4 bg-gradient-to-r opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-200"
           style={{
             backgroundImage: `linear-gradient(to right, ${product.gradientFrom.replace('from-', '')}, ${product.gradientTo.replace('to-', '')})`
           }}
@@ -79,7 +79,7 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Content */}
       <motion.h3 
-        className="text-2xl font-bold mb-4 transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
+        className="text-2xl font-bold mb-4 transition-shadow duration-200 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
         style={{
           background: 'transparent',
           color: product.gradientFrom.replace('from-', '')
@@ -87,7 +87,7 @@ function ProductCard({ product }: { product: Product }) {
       >
         {product.title}
       </motion.h3>
-      <p className="text-gray-300/90 text-lg mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">{product.description}</p>
+      <p className="text-gray-300/90 text-lg mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-200">{product.description}</p>
       
       {/* List items */}
       <ul className="space-y-4">
@@ -116,7 +116,7 @@ function ProductCard({ product }: { product: Product }) {
 
 export default function ProductsSection() {
   return (
-    <section id="produkter" className="relative py-32 px-4 md:px-8 lg:px-16 text-white overflow-hidden">
+    <section id="produkter" className="relative py-32 px-4 md:px-8 lg:px-16 text-white overflow-hidden" suppressHydrationWarning>
 
       <div className="relative w-full max-w-[1400px] mx-auto">
         <motion.div
