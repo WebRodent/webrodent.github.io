@@ -16,6 +16,10 @@ const config: Config = {
           800: '#120A2E',
         }
       },
+      zIndex: {
+        'header': '50',
+        'mobile-menu': '51',
+      }
     },
   },
   plugins: [],

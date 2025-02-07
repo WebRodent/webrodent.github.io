@@ -11,6 +11,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  position: relative;
 }
 
 html {
@@ -23,6 +24,8 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Gradient background effect */
@@ -47,4 +50,18 @@ section {
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   animation: grain 8s steps(10) infinite;
+}
+
+/* Add header styles */
+.header-fixed {
+  @apply fixed top-0 left-0 right-0;
+  z-index: 50;
+  background: rgba(10, 5, 30, 0.8); /* Using your navy-900 with opacity */
+  backdrop-filter: blur(8px);
+}
+
+/* Add mobile menu styles */
+.mobile-menu-button {
+  @apply block md:hidden;
+  z-index: 51;
 } 
