@@ -37,7 +37,7 @@ function CustomerCard({ customer }: { customer: Customer }) {
   return (
     <motion.div 
       variants={fadeInUp}
-      className="group bg-navy-800/30 p-8 md:p-10 rounded-2xl hover:bg-navy-800/50 transition-all duration-300 backdrop-blur-sm"
+      className="group bg-navy-800/30 p-6 sm:p-8 md:p-10 rounded-2xl hover:bg-navy-800/50 transition-all duration-300 backdrop-blur-sm"
     >
       <a 
         href={customer.website} 
@@ -45,7 +45,7 @@ function CustomerCard({ customer }: { customer: Customer }) {
         rel="noopener noreferrer"
         className="block"
       >
-        <div className="relative h-24 mb-8">
+        <div className="relative h-16 sm:h-20 md:h-24 mb-6 md:mb-8">
           <Image
             src={customer.logo}
             alt={customer.name}
@@ -53,8 +53,8 @@ function CustomerCard({ customer }: { customer: Customer }) {
             className="object-contain group-hover:scale-105 transition-transform"
           />
         </div>
-        <h3 className="text-2xl font-bold text-center mb-4">{customer.name}</h3>
-        <p className="text-gray-300 text-lg text-center mb-6">{customer.mission}</p>
+        <h3 className="text-xl sm:text-2xl font-bold text-center mb-3 md:mb-4">{customer.name}</h3>
+        <p className="text-gray-300 text-base sm:text-lg text-center mb-4 md:mb-6">{customer.mission}</p>
         <motion.div 
           className="flex items-center justify-center text-fuchsia-500 group-hover:text-fuchsia-400"
           whileHover={{ x: 5 }}

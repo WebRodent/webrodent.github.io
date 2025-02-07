@@ -37,7 +37,7 @@ export default function RatMascot() {
         stiffness: 400,
         damping: 25
       }}
-      className="fixed right-0 bottom-20 z-50"
+      className="fixed right-0 bottom-20 z-50 hidden md:block"
     >
       <div 
         className="cursor-pointer"

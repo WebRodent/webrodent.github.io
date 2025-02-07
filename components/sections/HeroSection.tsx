@@ -30,7 +30,7 @@ export default function HeroSection() {
             variants={staggerChildren}
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold leading-tight [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
+              className="text-4xl sm:text-6xl md:text-8xl font-bold leading-tight [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
               variants={fadeInUp}
             >
               Din{' '}
@@ -38,7 +38,7 @@ export default function HeroSection() {
               <span className="text-fuchsia-500">Fremtid</span>
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-3xl text-gray-300 max-w-2xl"
+              className="text-lg sm:text-xl md:text-3xl text-gray-300 max-w-2xl"
               variants={fadeInUp}
             >
               Vi leverer moderne løsninger for din bedrift

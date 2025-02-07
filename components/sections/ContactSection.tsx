@@ -40,14 +40,14 @@ function ContactCard({ link }: { link: ContactLink }) {
       href={link.href}
       target={link.href.startsWith('http') ? '_blank' : undefined}
       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="group flex items-center p-6 bg-navy-800/50 rounded-2xl hover:bg-navy-800 transition-all duration-300 backdrop-blur-sm"
+      className="group flex items-center p-4 sm:p-6 bg-navy-800/50 rounded-2xl hover:bg-navy-800 transition-all duration-300 backdrop-blur-sm"
       variants={fadeInUp}
       whileHover={{ x: 10 }}
     >
-      <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-400 flex items-center justify-center mr-6 group-hover:scale-110 transition-transform">
+      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-400 flex items-center justify-center mr-4 sm:mr-6 group-hover:scale-110 transition-transform">
         {link.icon}
       </div>
-      <span className="text-xl group-hover:text-fuchsia-400 transition-colors">{link.text}</span>
+      <span className="text-lg sm:text-xl group-hover:text-fuchsia-400 transition-colors">{link.text}</span>
     </motion.a>
   )
 }

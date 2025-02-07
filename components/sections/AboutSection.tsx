@@ -62,18 +62,18 @@ export default function AboutSection() {
             whileInView="animate"
             viewport={{ once: true }}
             variants={staggerChildren}
-            className="space-y-12"
+            className="space-y-8 md:space-y-12"
           >
             <div className="space-y-6">
               <motion.h2 
                 variants={fadeInUp}
-                className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
+                className="text-4xl sm:text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-purple-500 [text-shadow:_0_0_30px_rgb(168_85_247_/_0.4),_0_0_60px_rgb(168_85_247_/_0.2),_0_0_100px_rgb(168_85_247_/_0.1)]"
               >
                 Om Oss
               </motion.h2>
               <motion.p 
                 variants={fadeInUp}
-                className="text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light"
+                className="text-lg sm:text-xl md:text-2xl text-gray-300/90 max-w-3xl mx-auto font-light"
               >
                 Innovasjon i kulissene
               </motion.p>
@@ -86,7 +86,7 @@ export default function AboutSection() {
             </div>
 
             <motion.div 
-              className="grid grid-cols-2 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8"
               variants={staggerChildren}
             >
               {features.map((feature, index) => (
