@@ -107,6 +107,25 @@ export default function ContactSection() {
             </motion.div>
           </motion.div>
         </div>
+        
+        {/* Footer */}
+        <div className="border-t border-gray-800/50 mt-16 pt-8">
+          <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-16">
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+              <div className="text-gray-400 text-sm">
+                © 2025 WEBRODENT AS. Alle rettigheter forbeholdt.
+              </div>
+              <div className="flex space-x-6 text-sm">
+                <a 
+                  href="/terms" 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Salgsbetingelser
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
