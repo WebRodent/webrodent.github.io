@@ -12,8 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="no">
-      <body className={inter.className} suppressHydrationWarning>
-        {children}
+      <head>
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
@@ -27,6 +26,9 @@ export default function RootLayout({
             gtag('config', '${googleAnalyticsId}');
           `}
         </Script>
+      </head>
+      <body className={inter.className} suppressHydrationWarning>
+        {children}
       </body>
     </html>
   )
