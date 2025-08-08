@@ -3,7 +3,6 @@ import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID
 
 export default function RootLayout({
   children,
@@ -16,7 +15,7 @@ export default function RootLayout({
         {children}
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-9JKJ44J4FW`}
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -24,7 +23,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '${googleAnalyticsId}');
+            gtag('config', 'G-9JKJ44J4FW');
           `}
         </Script>
       </body>
