@@ -57,7 +57,7 @@ export default function TermsPage() {
 
           <h2>2. Partene</h2>
           <p>
-            <strong>Selger</strong> er WEBRODENT AS, Dokkvegen 11, 3920 PORSGRUNN, <a href="mailto:post@webrodent.com">post@webrodent.com</a>, 93884618, 929482387, og betegnes i det følgende som selger/selgeren.
+            <strong>Selger</strong> er WEBRODENT AS, Dokkvegen 11, 3920 PORSGRUNN, <a href="mailto:post@webrodent.com">post@webrodent.com</a>, 929482387, og betegnes i det følgende som selger/selgeren.
           </p>
           <p>
             <strong>Kjøper</strong> er den forbrukeren som foretar bestillingen, og betegnes i det følgende som kjøper/kjøperen.
