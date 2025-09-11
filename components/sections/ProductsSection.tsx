@@ -74,7 +74,7 @@ function ProductCard({ product }: { product: Product }) {
 
       {/* Content */}
       <h3 
-        className="text-2xl font-bold mb-4"
+        className="text-xl md:text-xl lg:text-2xl font-bold mb-4"
         style={{
           color: product.gradientFrom.replace('from-', '')
         }}

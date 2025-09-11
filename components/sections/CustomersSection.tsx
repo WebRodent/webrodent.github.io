@@ -23,6 +23,12 @@ const customers = [
     logo: './assets/customers/one_accounting.png',
     description: 'IT tjeneste leverandør',
     link: 'https://oneaccounting.no'
+  },
+  {
+    name: 'AValue',
+    logo: './assets/customers/avalue-logo_temp.png',
+    description: 'Utvikling av komplett digital plattform',
+    link: 'https://avalue.no'
   }
 ]
 
